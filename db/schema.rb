@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_02_093159) do
     t.float "distance"
     t.float "total_co2_emitions"
     t.float "price"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_purchases_on_item_id"
