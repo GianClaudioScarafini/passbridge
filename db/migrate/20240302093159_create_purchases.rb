@@ -8,7 +8,7 @@ class CreatePurchases < ActiveRecord::Migration[7.1]
       t.float :distance
       t.float :total_co2_emitions
       t.float :price
-      t.integer :status
+      t.integer :status , default: 0
 
       t.timestamps
     end
