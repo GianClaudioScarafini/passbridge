@@ -7,13 +7,13 @@
     <strong>circular economy for every one<strong></p>
     <%if user_signed_in? %>
       <%=link_to "let's get started", new_user_registration_path, class: "btn btn-dark"=%>
-      <% else %>
-      <%=link_to "let's get started", item_path, class: "btn btn-dark"=%>
+    <% else %>
+      <%=link_to "let's get started", items_path, class: "btn btn-dark"=%>
     <%end%>
 
 
   </div>
   <video class="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-  <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+  <%# <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"> %>
 </video>
 </div>
