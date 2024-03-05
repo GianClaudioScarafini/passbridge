@@ -1,12 +1,31 @@
-.navbar-lewagon {
+.navbar-passbridge {
   justify-content: space-between;
-  background: white;
+  font-family: 'Outfit', sans-serif;
+  background: rgb(57,61,98);
+  background: linear-gradient(90deg, rgba(57,61,98,0.5) 0%, rgba(24,73,48,0.5) 100%);
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-passbridge .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-passbridge .navbar-brand img {
   width: 40px;
+  margin-bottom: 2.5px;
+}
+
+.navbar-passbridge .nav-link {
+  font-size: 1.2em;
+}
+
+#logo-name {
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#user-details {
+  padding-left: 10px;
+  color: white;
 }
