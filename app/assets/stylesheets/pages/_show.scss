@@ -4,4 +4,22 @@
   border-radius: 10px;
   background-color: transparent;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  color: #ffffff
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title-condition {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-shipping-proposal {
+  display: flex;
+  justify-content: space-between;
 }

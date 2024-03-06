@@ -2,11 +2,18 @@
   <div class="card">
     <%= image_tag "item_placeholder.jpg", alt: "Card image", width: 700%>
     <div class="card-body">
-      <h5 class="card-title"><strong><%= @item.name %></strong></h5>
-      <p class="card-description"><%= @item.description %></p>
-      <p class="card-condition"><%= @item.condition %></p>
-      <h4><strong><%= @item.price %>€</strong></h4>
-      <div class="main-button">Send proposal</div>
+      <div>
+        <div class="card-title-condition">
+          <h2 class="card-title"><%= @item.name %></h2>
+          <p class="card-condition"><strong>Condition: </strong><%= @item.condition %></p>
+        </div>
+        <p class="card-description"><%= @item.description %></p>
+        <h4><strong><%= @item.price %> €</strong></h4>
+      </div>
+      <div class="card-shipping-proposal">
+        <p class="shipping-method">+ shipping methods</p>
+        <div class="main-button">send proposal</div>
+      </div>
     </div>
   </div>
 
