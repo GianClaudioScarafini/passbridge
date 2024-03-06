@@ -6,9 +6,9 @@
     and give them a second life<br>
     <strong>circular economy for everyone<strong></p>
     <%if user_signed_in? %>
-      <%=link_to "let's get started", new_user_registration_path, class: "btn btn-dark"=%>
-    <% else %>
       <%=link_to "let's get started", items_path, class: "btn btn-dark"=%>
+    <% else %>
+      <%=link_to "let's get started", new_user_registration_path, class: "btn btn-dark"=%>
     <%end%>
 
 
