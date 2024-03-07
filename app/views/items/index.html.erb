@@ -13,10 +13,7 @@
 
     <% @items.each do |item| %>
       <div class="mt-5">
-        <%= render "shared/carditem", name: item.name,
-         description: item.description,
-         price: item.price,
-         quantity: item.quantity %>
+        <%= render "shared/carditem", item: item %>
       </div>
     <% end%>
   </div>
