@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <h1 class="text-center">New Item</h1>
+  <%= simple_form_for @item do |f| %>
+    <%= f.input :name %>
+    <%= f.input :location %>
+    <%= f.input :quantity %>
+    <%= f.input :price %>
+    <%= f.input :condition %>
+    <%= f.input :description %>
+    <%= f.input :co2_emitions %>
+    <%= f.input :image, as: :file, input_html: { class: 'cloudinary-fileupload' } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
