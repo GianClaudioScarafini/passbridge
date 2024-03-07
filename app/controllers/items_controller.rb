@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
+<<<<<<< HEAD
   def index
     @items = Item.all
   end
 
   def show
     @item = Item.find(params[:id])
+    @items = Item.all
   end
 
   def new
@@ -22,5 +24,4 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :location, :quantity, :price, :condition, :description, :co2_emitions, images: [])
-  end
 end

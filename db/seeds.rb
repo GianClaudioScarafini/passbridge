@@ -9,10 +9,12 @@
 #   end
 
 require 'faker'
+Item.destroy_all
+User.destroy_all
 
-p "create 10 users each user has 1 item"
+p "create 16 users each user has 1 item"
 
-10.times do
+16.times do
   user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
