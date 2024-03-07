@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="outer-home">
+  <div class="container-home">
+    <h1>PASSBRIDGE</h1>
+    <p>Find furniture and materials<br>
+    near you<br>
+    and give them a second life<br>
+    <strong>circular economy for everyone<strong></p>
+    <%if user_signed_in? %>
+      <%=link_to "let's get started", new_user_registration_path, class: "btn btn-dark"=%>
+    <% else %>
+      <%=link_to "let's get started", items_path, class: "btn btn-dark"=%>
+    <%end%>
+
+
+  </div>
+  <video class="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+  <%# <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"> %>
+</video>
+</div>

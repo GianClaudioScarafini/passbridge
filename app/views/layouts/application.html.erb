@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag "passbridge_icon.svg" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+
+  <%# add if statement to check if the current path is not the root path, then render the navbar not make it visible on the main page %>
+  <% if request.path != "/" %>
+    <%= render "shared/navbar"%>
+  <%end%>
 <%= render "shared/flashes" %>
 
     <%= yield %>
