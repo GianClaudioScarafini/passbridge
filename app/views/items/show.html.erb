@@ -1,27 +1,28 @@
- <div class="outer m-3">
+<div class="outer m-3">
   <div class="container d-flex justify-content">
     <div class="card">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <%= image_tag "item1_placeholder.jpg", alt: "First slide", width: 700%>
+            <%= image_tag "item1_placeholder.jpg", alt: "First slide", width: 700 %>
           </div>
           <div class="carousel-item">
-            <%= image_tag "item2_placeholder.jpg", alt: "Second slide", width: 700%>
+            <%= image_tag "item1_placeholder.jpg", alt: "Second slide", width: 700 %>
           </div>
           <div class="carousel-item">
-            <%= image_tag "item3_placeholder.jpg", alt: "Third slide", width: 700%>
+            <%= image_tag "item1_placeholder.jpg", alt: "Third slide", width: 700 %>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+
       <div class="card-body">
         <div>
           <div class="card-title-condition">
