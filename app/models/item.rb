@@ -6,5 +6,4 @@ class Item < ApplicationRecord
   has_many_attached :images
 
   validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
-
 end

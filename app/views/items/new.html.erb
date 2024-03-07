@@ -8,7 +8,7 @@
     <%= f.input :condition %>
     <%= f.input :description %>
     <%= f.input :co2_emitions %>
-    <%= f.input :image, as: :file, input_html: { class: 'cloudinary-fileupload' } %>
+    <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit %>
   <% end %>
 </div>
