@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-3 new-item-form">
   <h1 class="text-center">New Item</h1>
   <%= simple_form_for @item do |f| %>
     <%= f.input :name %>
@@ -9,6 +9,6 @@
     <%= f.input :description %>
     <%= f.input :co2_emitions %>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-success" %>
   <% end %>
 </div>
