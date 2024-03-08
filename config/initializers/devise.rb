@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '01f45c06f29c6ad13712e0ba51177ac5c5cacb08309bb127abcebefd2ebe7f1cdeba11b322ae5c2ed3dbbaf80bc56d13dbb7f8889705c72c8772ed3d417a06eb'
+  # config.secret_key = '1745a1d5a915e79795f1650ccad9329790a8bc0454b88dec995bff489ede38341c007c7a6b814145e7d6a93907939672a1a711f9eee6df9707ce6c96a0e2f279'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,7 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'info@passbridge.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'd3b32e87df85f94218dd7b8693b59101ad46c62acb3da42431b697d441aa1a2b817e89062a9f1876f505cb69159b15e42be7ae6eaeebdaca723540edf7832af7'
+  # config.pepper = '27f85b96b951dff662625b1c55e906ce6d4e828bf1816363b1500249019720d961466f1ec26541324b29f35258987aa72c43b9270db080fd2a167e5de64b47e4'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -178,7 +178,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 6..128
+  config.password_length = 6..10
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -263,7 +263,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
