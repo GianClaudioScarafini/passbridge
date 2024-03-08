@@ -1,131 +1,137 @@
 <div class="outer m-3">
   <div class="container d-flex justify-content">
-    <div class="card">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= image_tag "item1_placeholder.jpg", alt: "First slide", width: 700 %>
+    <%= form_tag item_home_path, :method => "get" do %>
+        <%=label_tag(:search, "What are you looking for?") %>
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search for items" %>
+        <%= submit_tag "Search", class: "btn btn-outline-secondary" %>
+        </div>
+      </div>
+      <div class="card">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= image_tag "item1_placeholder.jpg", alt: "First slide", width: 700 %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "item1_placeholder.jpg", alt: "Second slide", width: 700 %>
+            </div>
+            <div class="carousel-item">
+              <%= image_tag "item1_placeholder.jpg", alt: "Third slide", width: 700 %>
+            </div>
           </div>
-          <div class="carousel-item">
-            <%= image_tag "item1_placeholder.jpg", alt: "Second slide", width: 700 %>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div class="card-body">
+          <div>
+            <div class="card-title-condition">
+              <h2 class="card-title"><%= @item.name %></h2>
+              <p class="card-condition"><strong>condition: </strong><%= @item.condition %></p>
+            </div>
+            <p class="card-description"><%= @item.description %></p>
+            <h4><strong><%= @item.price %> €</strong></h4>
           </div>
-          <div class="carousel-item">
-            <%= image_tag "item1_placeholder.jpg", alt: "Third slide", width: 700 %>
+          <div class="card-shipping-proposal">
+            <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
+            <div class="main-button">send proposal</div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
 
-      <div class="card-body">
-        <div>
-          <div class="card-title-condition">
-            <h2 class="card-title"><%= @item.name %></h2>
-            <p class="card-condition"><strong>condition: </strong><%= @item.condition %></p>
-          </div>
-          <p class="card-description"><%= @item.description %></p>
-          <h4><strong><%= @item.price %> €</strong></h4>
-        </div>
-        <div class="card-shipping-proposal">
-          <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
-          <div class="main-button">send proposal</div>
-        </div>
+      <div class="map m-3">
+        <%= image_tag "map_placeholder.jpg", alt: "Map image", width: 500%>
       </div>
     </div>
 
-    <div class="map m-3">
-      <%= image_tag "map_placeholder.jpg", alt: "Map image", width: 500%>
+    <h1 class="title">other items near you...</h1>
+
+  <div id="carouselExampleControls" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-flex" style="width: 100%; justify-content: center;">
+            <% @items.first(4).each do |item| %>
+              <%= link_to item_path(@item) do %>
+                <div class="card" style="width: 18rem;">
+                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= item.name %></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <% @items.each_slice(4) do |items| %>
+            <div class="carousel-item">
+              <div class="d-flex" style="width: 100%; justify-content: center;">
+              <% unless items[0].nil? %>
+                <%= link_to item_path(@item) do %>
+                  <div class="card" style="width: 18rem;">
+                    <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= @item.name %></h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless items[1].nil? %>
+                <%= link_to item_path(@item) do %>
+                  <div class="card" style="width: 18rem;">
+                    <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= @item.name %></h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless items[2].nil? %>
+                <%= link_to item_path(@item) do %>
+                  <div class="card" style="width: 18rem;">
+                    <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= @item.name %></h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless items[3].nil? %>
+                <%= link_to item_path(@item) do %>
+                  <div class="card" style="width: 18rem;">
+                    <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= @item.name %></h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
-
-  <h1 class="title">other items near you...</h1>
-
-<div id="carouselExampleControls" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="d-flex" style="width: 100%; justify-content: center;">
-          <% @items.first(4).each do |item| %>
-            <%= link_to item_path(@item) do %>
-              <div class="card" style="width: 18rem;">
-                <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
-                <div class="card-body">
-                  <h5 class="card-title"><%= item.name %></h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <% @items.each_slice(4) do |items| %>
-          <div class="carousel-item">
-            <div class="d-flex" style="width: 100%; justify-content: center;">
-            <% unless items[0].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-
-            <% unless items[1].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-
-            <% unless items[2].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-
-            <% unless items[3].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</div>
