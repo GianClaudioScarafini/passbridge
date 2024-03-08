@@ -3,8 +3,9 @@ class Item < ApplicationRecord
   has_many :item_shipping_methods
   has_many :shipping_methods , through: :item_shipping_methods
 
-  validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
+  has_many_attached :images
 
+<<<<<<< HEAD
   def self.search(search)
     if search
       user_type = User.find_by(name: search)
@@ -17,4 +18,7 @@ class Item < ApplicationRecord
       @items = Item.all
     end
   end
+=======
+  validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
+>>>>>>> 969ea09bcb0f718f42df242a21606e0c72ec7ce4
 end

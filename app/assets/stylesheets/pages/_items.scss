@@ -1,0 +1,18 @@
+.items-cards-array{
+  padding: 10px;
+  display: flex;
+  width: 55%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  height: auto;
+}
+.item-card-map-location{
+  height: auto;
+  width: 45%;
+  background: rgba(120, 120, 120, 0.637);
+}
+
+.card-and-map{
+  display: flex;
+}
