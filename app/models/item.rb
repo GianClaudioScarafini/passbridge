@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_many :item_shipping_methods
   has_many :shipping_methods , through: :item_shipping_methods
 
-  validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
+  has_many_attached :images
 
+  validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
 end

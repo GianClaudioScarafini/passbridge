@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -13,3 +15,6 @@
 
 // Passbridge background image
 @import "config/background_image";
+
+// Items partials
+@import "items/new";
