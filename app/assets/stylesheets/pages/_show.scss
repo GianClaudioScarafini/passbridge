@@ -36,3 +36,14 @@
 .carousel-inner {
   margin: auto;
 }
+
+.item-image {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-image {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}

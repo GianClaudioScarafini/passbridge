@@ -11,3 +11,4 @@ pin "stimulus-carousel" # @5.0.1
 pin "dom7" # @4.0.6
 pin "ssr-window" # @4.0.2
 pin "swiper/bundle", to: "swiper--bundle.js" # @8.4.7
+pin "flatpickr" # @4.6.13
