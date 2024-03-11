@@ -8,6 +8,7 @@
     <%= favicon_link_tag "passbridge_icon.svg" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css' %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -17,7 +18,7 @@
   <% if request.path != "/" %>
     <%= render "shared/navbar"%>
   <%end%>
-<%= render "shared/flashes" %>
+    <%= render "shared/flashes" %>
 
     <%= yield %>
     <%= render 'shared/footer' %>
