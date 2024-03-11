@@ -11,9 +11,6 @@ pin "stimulus-carousel" # @5.0.1
 pin "dom7" # @4.0.6
 pin "ssr-window" # @4.0.2
 pin "swiper/bundle", to: "swiper--bundle.js" # @8.4.7
-<<<<<<< HEAD
 pin "mapbox-gl" # @3.1.2
 pin "process" # @2.0.1
-=======
 pin "flatpickr" # @4.6.13
->>>>>>> a2ab933d235b383bf1012530b8633778a08ba348
