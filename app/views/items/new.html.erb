@@ -7,7 +7,7 @@
   ] %>
   <h5><%= sentences.sample %></h5>
   <hr>
-  <%= simple_form_for @item do |f| %>
+  <%= simple_form_for @item, data: { controller: "datepicker" } do |f| %>
     <%= f.input :name %>
     <%= f.input :location %>
     <div class="d-flex gap-3">
@@ -21,6 +21,27 @@
     <%= f.input :condition %>
     <%= f.input :description %>
     <%= f.input :co2_emitions %>
+    <div class="d-flex gap-3">
+      <div class="flex-fill">
+        <%= f.input :start_date,
+          as: :string,
+          input_html: {
+            data: {
+              datepicker_target: "startDate",
+              action: "input->datepicker#updateEndDate"
+            }
+          } %>
+      </div>
+      <div class="flex-fill">
+        <%= f.input :end_date,
+          as: :string,
+          input_html: {
+            data: {
+              datepicker_target: "endDate"
+            }
+          } %>
+      </div>
+    </div>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class: "btn btn-success" %>
   <% end %>
