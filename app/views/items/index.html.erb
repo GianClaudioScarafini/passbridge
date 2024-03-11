@@ -8,6 +8,11 @@
   </nav>
 </div>
 <div class="card-and-map">
+  <%# this displays the search results %>
+<% @items.each do |item| %>
+  <p><%= item.name %>: <%= item.description %> - <%= item.price %></p>
+<% end %>
+
   <%# thise are the list of items %>
   <div class="items-cards-array">
 

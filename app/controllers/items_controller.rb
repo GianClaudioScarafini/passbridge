@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.search(params[:search])
+    if params[:search]
+      @items = Item.where("name LIKE ?", "%#{params[:search]}%")
+    else
+      @Items = Item.all
+    end
   end
 
   def new
