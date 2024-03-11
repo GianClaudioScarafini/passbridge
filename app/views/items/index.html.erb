@@ -1,10 +1,10 @@
 <%# this is the search bar %>
 <div class="items-index-search">
   <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <%= form_with(url: items_path, method: "get") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search for items" %>
+      <%= submit_tag "Search" %>
+    <% end %>
   </nav>
 </div>
 <div class="card-and-map">
