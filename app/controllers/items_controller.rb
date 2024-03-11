@@ -1,6 +1,13 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+
+    @markers = @items.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
@@ -20,6 +27,12 @@ class ItemsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path, status: :see_other
   end
 
   private

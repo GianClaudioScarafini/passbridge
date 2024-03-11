@@ -4,14 +4,13 @@
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <%= image_tag "item1_placeholder.jpg", alt: "First slide", width: 700 %>
+            <%= cl_image_tag @item.images[0].key, alt: "First slide", width: 700, class: "item-image" %>
           </div>
-          <div class="carousel-item">
-            <%= image_tag "item1_placeholder.jpg", alt: "Second slide", width: 700 %>
-          </div>
-          <div class="carousel-item">
-            <%= image_tag "item1_placeholder.jpg", alt: "Third slide", width: 700 %>
-          </div>
+          <% @item.images[1..].each do |image| %>
+            <div class="carousel-item">
+              <%= cl_image_tag image.key, alt: "Other slides", width: 700 %>
+            </div>
+          <% end %>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -53,7 +52,7 @@
           <% @items.first(4).each do |item| %>
             <%= link_to item_path(@item) do %>
               <div class="card" style="width: 18rem;">
-                <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                <%= cl_image_tag item.images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                 <div class="card-body">
                   <h5 class="card-title"><%= item.name %></h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -70,7 +69,7 @@
             <% unless items[0].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                  <%= cl_image_tag items[0].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -82,7 +81,7 @@
             <% unless items[1].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                  <%= cl_image_tag items[1].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -94,7 +93,7 @@
             <% unless items[2].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                  <%= cl_image_tag items[2].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -106,7 +105,7 @@
             <% unless items[3].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
-                  <%= image_tag "alternative_item_placeholder.jpg", alt: "Map image", width: 250%>
+                  <%= cl_image_tag items[3].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
