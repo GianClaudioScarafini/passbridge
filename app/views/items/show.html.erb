@@ -38,9 +38,11 @@
       </div>
     </div>
 
-    <div class="map m-3">
-      <%= image_tag "map_placeholder.jpg", alt: "Map image", width: 500%>
-    </div>
+  <div class="item-card-map-location"   data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  </div>
   </div>
 
   <h1 class="title">other items near you...</h1>

@@ -199,7 +199,7 @@ item8.save
 file = URI.open("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHNvZmElMjBncmVlbnxlbnwwfHwwfHx8MA%3D%3D")
 item9 = Item.new(
   name: "Green 3-people sofa",
-  location: "London",
+  location: "19 Victoria Road London E59 8LK",
   description: "3 people sofa very comfortable for naps and tv time.",
   price: 435.00,
   condition: "very good",
@@ -219,7 +219,7 @@ item9.save
 file = URI.open("https://images.unsplash.com/photo-1640126288964-60593b8563e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZWQlMjBmdXJuaXR1cmV8ZW58MHx8MHx8fDA%3D")
 item10 = Item.new(
   name: "Used chairs",
-  location: "London",
+  location: "84-86 St John's Rd, London SW11 1PX",
   description: "A bunch of used chair in different styles and conditions.",
   price: 0.00,
   condition: "bad",
@@ -239,7 +239,7 @@ item10.save
 file = URI.open("https://images.unsplash.com/photo-1645401534895-ff4be8e98e75?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item11 = Item.new(
   name: "Pair of used sofas",
-  location: "London",
+  location: "9388 Albert Road, London",
   description: "Two used sofas to be recycled.",
   price: 40.00,
   condition: "bad",
@@ -259,7 +259,7 @@ item11.save
 file = URI.open("https://images.unsplash.com/photo-1616661317985-aeb2a13016d6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpcGVzfGVufDB8fDB8fHww")
 item12 = Item.new(
   name: "Metal pipes",
-  location: "London",
+  location: "39 North St, London SW4 0HJ",
   description: "Two types of metal pypes in different diameters and lenghts.",
   price: 190.00,
   condition: "good",
@@ -279,7 +279,7 @@ item12.save
 file = URI.open("https://plus.unsplash.com/premium_photo-1676154517862-3d39720f63f5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmV0b258ZW58MHx8MHx8fDA%3D")
 item13 = Item.new(
   name: "Betton blocks",
-  location: "London",
+  location: "45 Victoria Road London SW43 9VW",
   description: "Solid square betton blocks.",
   price: 930.10,
   condition: "as new",
@@ -299,7 +299,7 @@ item13.save
 file = URI.open("https://images.unsplash.com/photo-1623111771732-6eadcf47b60b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0aHR1YiUyMGFudGlrfGVufDB8fDB8fHww")
 item14 = Item.new(
   name: "Antique bath tub",
-  location: "London",
+  location: "45 Main Street London SE10 5UA",
   description: "Greenish antique bath thub ready to use.",
   price: 150.00,
   condition: "good",
@@ -319,7 +319,7 @@ item14.save
 file = URI.open("https://images.unsplash.com/photo-1468781552669-f1039d18ed34?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29vZGVuJTIwZG9vciUyMG9sZHxlbnwwfHwwfHx8MA%3D%3D")
 item15 = Item.new(
   name: "Wooden old doors",
-  location: "London",
+  location: "59 Station Road London WC87 2TE",
   description: "Pair of wooden old doors to be refurbished.",
   price: 24.00,
   condition: "regular",
@@ -339,7 +339,7 @@ item15.save
 file = URI.open("https://images.unsplash.com/photo-1647592097679-b8f57f875e2f?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item16 = Item.new(
   name: "Wooden old windows",
-  location: "London",
+  location: "3 Mill Road London SW76 3RS",
   description: "Set of wooden old windows to be recycled.",
   price: 56.00,
   condition: "regular",
