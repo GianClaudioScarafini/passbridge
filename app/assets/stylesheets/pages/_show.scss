@@ -24,6 +24,14 @@
   justify-content: space-between;
 }
 
+.card:hover{
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.537);
+  transition: 0.3s;
+  zoom: 1.01;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .title {
   margin: 20px;
   color: #ffffff;

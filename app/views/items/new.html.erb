@@ -1,4 +1,4 @@
-<div class="container mt-3 new-item-form">
+<div class="new-item-form">
   <h2>Post your items</h2>
   <% sentences = [
     "...and give a second life to your Construction material",
@@ -43,6 +43,6 @@
       </div>
     </div>
     <%= f.input :images, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit, class: "btn btn-success" %>
+    <%= f.button :submit, class: "main-button" %>
   <% end %>
 </div>

@@ -29,6 +29,7 @@
             <p class="card-condition"><strong>condition: </strong><%= @item.condition %></p>
           </div>
           <p class="card-description"><%= @item.description %></p>
+          <p class="dates">available from <%= @item.start_date %> to <%= @item.end_date %></p>
           <h4><strong><%= @item.price %> €</strong></h4>
         </div>
         <div class="card-shipping-proposal">
@@ -52,7 +53,7 @@
       <div class="carousel-item active">
         <div class="d-flex" style="width: 100%; justify-content: center;">
           <% @items.first(4).each do |item| %>
-            <%= link_to item_path(@item) do %>
+            <%= link_to item_path(item) do %>
               <div class="card" style="width: 18rem;">
                 <%= cl_image_tag item.images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                 <div class="card-body">
@@ -69,7 +70,7 @@
           <div class="carousel-item">
             <div class="d-flex" style="width: 100%; justify-content: center;">
             <% unless items[0].nil? %>
-              <%= link_to item_path(@item) do %>
+              <%= link_to item_path(items[0]) do %>
                 <div class="card" style="width: 18rem;">
                   <%= cl_image_tag items[0].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
@@ -81,7 +82,7 @@
             <% end %>
 
             <% unless items[1].nil? %>
-              <%= link_to item_path(@item) do %>
+              <%= link_to item_path(items[1]) do %>
                 <div class="card" style="width: 18rem;">
                   <%= cl_image_tag items[1].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
@@ -93,7 +94,7 @@
             <% end %>
 
             <% unless items[2].nil? %>
-              <%= link_to item_path(@item) do %>
+              <%= link_to item_path(items[2]) do %>
                 <div class="card" style="width: 18rem;">
                   <%= cl_image_tag items[2].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">
@@ -105,7 +106,7 @@
             <% end %>
 
             <% unless items[3].nil? %>
-              <%= link_to item_path(@item) do %>
+              <%= link_to item_path(items[3]) do %>
                 <div class="card" style="width: 18rem;">
                   <%= cl_image_tag items[3].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
                   <div class="card-body">

@@ -21,14 +21,14 @@ user1.save
 
 file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww")
 user2 = User.new(
-  first_name: "Eric",
-  last_name: "Smith",
-  email: "lucy@gmail.com",
-  address: "81 Kensington Gardens Square",
-  city: "London",
-  state: "London",
-  zip: "W2 4DJ",
-  country: "United Kingdom",
+  first_name: "Frank",
+  last_name: "Schmidt",
+  email: "frank@gmail.com",
+  address: "Dresdener Str. 2",
+  city: "Münster",
+  state: "North Rhine-Westphalia",
+  zip: "64839",
+  country: "Germany",
   phone: "02800011858",
   password: "123456"
 )
@@ -39,7 +39,7 @@ user2.save
 file = URI.open("https://images.unsplash.com/photo-1629608444154-6d052691632f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJyaWNrc3xlbnwwfHwwfHx8MA%3D%3D")
 item1 = Item.new(
   name: "Regular bricks",
-  location: "Berlin",
+  location: "Kriegsstraße 100, 76133 Karlsruhe, Germany",
   description: "Solid construction bricks in good shape.",
   price: 6.10,
   condition: "good",
@@ -59,7 +59,7 @@ item1.save
 file = URI.open("https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG9mZmljZSUyMHRhYmxlfGVufDB8fDB8fHww")
 item2 = Item.new(
   name: "Modern desk",
-  location: "Berlin",
+  location: "Europa-Allee 6, 60327 Frankfurt am Main, Germany",
   description: "Beautiful and almost new working desk with minimal design.",
   price: 130.00,
   condition: "like new",
@@ -79,7 +79,7 @@ item2.save
 file = URI.open("https://images.unsplash.com/photo-1560435650-7ec2e17ba926?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGJyaWNrc3xlbnwwfHwwfHx8MA%3D%3D")
 item3 = Item.new(
   name: "White bricks",
-  location: "Berlin",
+  location: "Herzog-Wilhelm-Straße 28, 80331 München, Germany",
   description: "White construction bricks in different sizes.",
   price: 7.50,
   condition: "good",
@@ -99,7 +99,7 @@ item3.save
 file = URI.open("https://images.unsplash.com/photo-1573871924474-04f515cf7399?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGJyaWNrfGVufDB8fDB8fHww")
 item4 = Item.new(
   name: "Hollow bricks",
-  location: "Berlin",
+  location: "Gleimstraße 55, 10437 Berlin, Germany",
   description: "Hollow bricks for construction.",
   price: 5.20,
   condition: "regular",
@@ -119,7 +119,7 @@ item4.save
 file = URI.open("https://images.unsplash.com/photo-1489269637500-aa0e75768394?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWFtZXMlMjBibGFjayUyMGNoYWlyfGVufDB8fDB8fHww")
 item5 = Item.new(
   name: "Black Eames chair with armrests",
-  location: "Berlin",
+  location: "Waldschmidtstraße 6, 60316 Frankfurt am Main, Germany",
   description: "Black Eames chair with some small scratches.",
   price: 249.00,
   condition: "very good",
@@ -139,7 +139,7 @@ item5.save
 file = URI.open("https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWFtZXMlMjB3aGl0ZSUyMGNoYWlyfGVufDB8fDB8fHww")
 item6 = Item.new(
   name: "White Eames chairs",
-  location: "Berlin",
+  location: "Hedwigstraße 20, 04315 Leipzig, Germany",
   description: "Two White Eames chairs as new.",
   price: 290.00,
   condition: "like new",
@@ -159,7 +159,7 @@ item6.save
 file = URI.open("https://images.unsplash.com/photo-1630835016348-ba2854bbf78b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVqaSUyMGJlZHxlbnwwfHwwfHx8MA%3D%3D")
 item7 = Item.new(
   name: "Night table set",
-  location: "Berlin",
+  location: "Lützner Str. 91, 04177 Leipzig, Germany",
   description: "Night table set with drawers in japanese style.",
   price: 88.00,
   condition: "very good",
@@ -179,7 +179,7 @@ item7.save
 file = URI.open("https://images.unsplash.com/photo-1621687438255-08b63e0b64ec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGNhcnBldHxlbnwwfHwwfHx8MA%3D%3D")
 item8 = Item.new(
   name: "Antique carpet",
-  location: "Berlin",
+  location: "Prinz-Friedrich-Leopold-Straße 6, 14129 Berlin, Germany",
   description: "Arabian style arpet with measurements 120 x 200 cm.",
   price: 36.40,
   condition: "regular",
@@ -199,7 +199,7 @@ item8.save
 file = URI.open("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHNvZmElMjBncmVlbnxlbnwwfHwwfHx8MA%3D%3D")
 item9 = Item.new(
   name: "Green 3-people sofa",
-  location: "19 Victoria Road London E59 8LK",
+  location: "Kollwitzstraße 16, 10405 Berlin, Germany",
   description: "3 people sofa very comfortable for naps and tv time.",
   price: 435.00,
   condition: "very good",
@@ -219,7 +219,7 @@ item9.save
 file = URI.open("https://images.unsplash.com/photo-1640126288964-60593b8563e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZWQlMjBmdXJuaXR1cmV8ZW58MHx8MHx8fDA%3D")
 item10 = Item.new(
   name: "Used chairs",
-  location: "84-86 St John's Rd, London SW11 1PX",
+  location: "Herrfurthstraße 29, 12049 Berlin, Germany",
   description: "A bunch of used chair in different styles and conditions.",
   price: 0.00,
   condition: "bad",
@@ -239,7 +239,7 @@ item10.save
 file = URI.open("https://images.unsplash.com/photo-1645401534895-ff4be8e98e75?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item11 = Item.new(
   name: "Pair of used sofas",
-  location: "9388 Albert Road, London",
+  location: "Albersloher Weg 198, 48155 Münster, Germany",
   description: "Two used sofas to be recycled.",
   price: 40.00,
   condition: "bad",
@@ -259,7 +259,7 @@ item11.save
 file = URI.open("https://images.unsplash.com/photo-1616661317985-aeb2a13016d6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpcGVzfGVufDB8fDB8fHww")
 item12 = Item.new(
   name: "Metal pipes",
-  location: "39 North St, London SW4 0HJ",
+  location: "Heeremansweg 11-13, 48167 Münster, Germany",
   description: "Two types of metal pypes in different diameters and lenghts.",
   price: 190.00,
   condition: "good",
@@ -279,7 +279,7 @@ item12.save
 file = URI.open("https://plus.unsplash.com/premium_photo-1676154517862-3d39720f63f5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmV0b258ZW58MHx8MHx8fDA%3D")
 item13 = Item.new(
   name: "Betton blocks",
-  location: "45 Victoria Road London SW43 9VW",
+  location: "Am Bach 20, 33602 Bielefeld, Germany",
   description: "Solid square betton blocks.",
   price: 930.10,
   condition: "as new",
@@ -299,7 +299,7 @@ item13.save
 file = URI.open("https://images.unsplash.com/photo-1623111771732-6eadcf47b60b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0aHR1YiUyMGFudGlrfGVufDB8fDB8fHww")
 item14 = Item.new(
   name: "Antique bath tub",
-  location: "45 Main Street London SE10 5UA",
+  location: "Schwesterstraße 64, 42285 Wuppertal, Germany",
   description: "Greenish antique bath thub ready to use.",
   price: 150.00,
   condition: "good",
@@ -319,7 +319,7 @@ item14.save
 file = URI.open("https://images.unsplash.com/photo-1468781552669-f1039d18ed34?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29vZGVuJTIwZG9vciUyMG9sZHxlbnwwfHwwfHx8MA%3D%3D")
 item15 = Item.new(
   name: "Wooden old doors",
-  location: "59 Station Road London WC87 2TE",
+  location: "Albertus-Magnus-Platz, 50923 Köln, Germany",
   description: "Pair of wooden old doors to be refurbished.",
   price: 24.00,
   condition: "regular",
@@ -339,7 +339,7 @@ item15.save
 file = URI.open("https://images.unsplash.com/photo-1647592097679-b8f57f875e2f?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item16 = Item.new(
   name: "Wooden old windows",
-  location: "3 Mill Road London SW76 3RS",
+  location: "Gustav-Heinemann-Straße 80, 51377 Leverkusen, Germany",
   description: "Set of wooden old windows to be recycled.",
   price: 56.00,
   condition: "regular",
