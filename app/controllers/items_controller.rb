@@ -13,6 +13,15 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @items = Item.all
+    @item_array = Item.where(id: @item.id)
+
+    @markers = @item_array.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+
   end
 
   def new
