@@ -1,19 +1,19 @@
 <div class="outer-home">
   <div class="container-home">
-    <h1>PASSBRIDGE</h1>
-    <p>Find furniture and materials<br>
-    near you<br>
-    and give them a second life<br>
-    <strong>circular economy for everyone<strong></p>
-    <%if user_signed_in? %>
-      <%=link_to "let's get started", items_path, class: "btn btn-dark"=%>
-    <% else %>
-      <%=link_to "let's get started", new_user_registration_path, class: "btn btn-dark"=%>
-    <%end%>
-
-
+    <h1 class="passbridge-title">passbridge</h1>
+    <p>find furniture and materials near you
+    <br>and give them a second life</p>
+    <h5>circular economy for everyone</h5>
+    <div class="button-container">
+      <%if user_signed_in? %>
+        <%=link_to "get started", items_path, class: "main-button"=%>
+      <% else %>
+        <%=link_to "get started", new_user_registration_path, class: "main-button"=%>
+      <%end%>
+    </div>
   </div>
+
   <video class="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
-</video>
+  </video>
 </div>
