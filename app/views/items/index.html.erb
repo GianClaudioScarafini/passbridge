@@ -1,18 +1,23 @@
 <%# this is the search bar %>
-<div class="items-index-search">
-  <nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </nav>
+<div class= "m-2">
+  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
+    <div class="search-form-control form-group d-flex mt-3">
+      <input class="form-control string required mx-3" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="main-button">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  </form>
 </div>
+
+
+
 <div class="card-and-map">
   <%# thise are the list of items %>
   <div class="items-cards-array">
 
     <% @items.each do |item| %>
-      <div class="mt-5 text-decoration-none">
+      <div class="mt-3 text-decoration-none">
         <%= render "shared/carditem", item: item %>
       </div>
     <%end%>
