@@ -13,6 +13,15 @@
   justify-content: space-between;
 }
 
+.carousel-card-body {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  overflow: hidden;
+}
+
 .card-title-condition {
   display: flex;
   justify-content: space-between;
@@ -22,6 +31,14 @@
 .card-shipping-proposal {
   display: flex;
   justify-content: space-between;
+}
+
+.card:hover{
+  box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.537);
+  transition: 0.3s;
+  zoom: 1.01;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .title {
@@ -38,6 +55,7 @@
 }
 
 .item-image {
+  height: 500px;
   object-fit: cover;
   border-radius: 10px;
 }

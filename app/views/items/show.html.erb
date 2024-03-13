@@ -1,5 +1,6 @@
 <div class="outer m-3">
-  <div class="container d-flex justify-content">
+  <%=link_to "Back to all items", items_path, class: "main-button"%>
+  <div class="container d-flex justify-content mt-3">
     <div class="card">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -8,7 +9,7 @@
           </div>
           <% @item.images[1..].each do |image| %>
             <div class="carousel-item">
-              <%= cl_image_tag image.key, alt: "Other slides", width: 700 %>
+              <%= cl_image_tag image.key, alt: "Other slides", width: 700, class: "item-image" %>
             </div>
           <% end %>
         </div>
@@ -29,6 +30,7 @@
             <p class="card-condition"><strong>condition: </strong><%= @item.condition %></p>
           </div>
           <p class="card-description"><%= @item.description %></p>
+          <p class="dates">available from <%= @item.start_date.strftime("%d-%m-%Y") %> to <%= @item.end_date.strftime("%d-%m-%Y") %></p>
           <h4><strong><%= @item.price %> €</strong></h4>
         </div>
         <div class="card-shipping-proposal">
@@ -52,12 +54,12 @@
       <div class="carousel-item active">
         <div class="d-flex" style="width: 100%; justify-content: center;">
           <% @items.first(4).each do |item| %>
-            <%= link_to item_path(@item) do %>
+            <%= link_to item_path(item) do %>
               <div class="card" style="width: 18rem;">
                 <%= cl_image_tag item.images[0].key, alt: "Item image", width: 250, class: "card-image"%>
-                <div class="card-body">
+                <div class="carousel-card-body">
                   <h5 class="card-title"><%= item.name %></h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text"><%= item.description %></p>
                 </div>
               </div>
             <% end %>
@@ -65,59 +67,23 @@
         </div>
       </div>
 
-      <% @items.each_slice(4) do |items| %>
-          <div class="carousel-item">
-            <div class="d-flex" style="width: 100%; justify-content: center;">
-            <% unless items[0].nil? %>
-              <%= link_to item_path(@item) do %>
+      <div class="carousel-item">
+        <div class="d-flex" style="width: 100%; justify-content: center;">
+          <% @items.each_slice(4).each do |item| %>
+            <% unless item.first.nil? %>
+              <%= link_to item_path(item.first) do %>
                 <div class="card" style="width: 18rem;">
-                  <%= cl_image_tag items[0].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <%= cl_image_tag item.first.images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+                  <div class="carousel-card-body">
+                    <h5 class="card-title"><%= item.first.name %></h5>
+                    <p class="card-text"><%= item.first.description %></p>
                   </div>
                 </div>
               <% end %>
             <% end %>
-
-            <% unless items[1].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= cl_image_tag items[1].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-
-            <% unless items[2].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= cl_image_tag items[2].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-
-            <% unless items[3].nil? %>
-              <%= link_to item_path(@item) do %>
-                <div class="card" style="width: 18rem;">
-                  <%= cl_image_tag items[3].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
-                  <div class="card-body">
-                    <h5 class="card-title"><%= @item.name %></h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
