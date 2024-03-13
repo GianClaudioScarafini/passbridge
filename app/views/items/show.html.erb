@@ -1,26 +1,30 @@
 <div class="outer m-3">
   <div class="container d-flex justify-content">
     <div class="card">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <%= cl_image_tag @item.images[0].key, alt: "First slide", width: 700, class: "item-image" %>
-          </div>
-          <% @item.images[1..].each do |image| %>
-            <div class="carousel-item">
-              <%= cl_image_tag image.key, alt: "Other slides", width: 700 %>
+      <% if @item.images.attached? %>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @item.images[0].key, alt: "First slide", width: 700, class: "item-image" %>
             </div>
-          <% end %>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+            <% @item.images[1..].each do |image| %>
+              <div class="carousel-item">
+                <%= cl_image_tag image.key, alt: "Other slides", width: 700 %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
       </div>
+    <%else %>
+      <%=image_tag "item1_placeholder.jpg" %>
+    <%end %>
 
       <div class="card-body">
         <div>
@@ -54,7 +58,11 @@
           <% @items.first(4).each do |item| %>
             <%= link_to item_path(@item) do %>
               <div class="card" style="width: 18rem;">
+              <% if item.images.attached? %>
                 <%= cl_image_tag item.images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+              <%else %>
+                 <%=image_tag "item1_placeholder.jpg" %>
+              <%end %>
                 <div class="card-body">
                   <h5 class="card-title"><%= item.name %></h5>
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -71,7 +79,11 @@
             <% unless items[0].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
+                <% if items[0].images.attached? %>
                   <%= cl_image_tag items[0].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+                <%else %>
+                  <%=image_tag "item1_placeholder.jpg" %>
+                <%end %>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,7 +95,11 @@
             <% unless items[1].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
+                <% if items[1].images.attached? %>
                   <%= cl_image_tag items[1].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+                      <%else %>
+                  <%=image_tag "item1_placeholder.jpg" %>
+                  <%end %>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -95,7 +111,11 @@
             <% unless items[2].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
+                <% if items[2].images.attached? %>
                   <%= cl_image_tag items[2].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+                    <%else %>
+                    <%=image_tag "item1_placeholder.jpg" %>
+                    <%end %>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -107,7 +127,11 @@
             <% unless items[3].nil? %>
               <%= link_to item_path(@item) do %>
                 <div class="card" style="width: 18rem;">
+                <% if items[3].images.attached? %>
                   <%= cl_image_tag items[3].images[0].key, alt: "Item image", width: 250, class: "card-image"%>
+                <%else %>
+                    <%=image_tag "item1_placeholder.jpg" %>
+                <%end %>
                   <div class="card-body">
                     <h5 class="card-title"><%= @item.name %></h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
