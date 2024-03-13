@@ -1,0 +1,67 @@
+<div class="container mt-5" style="color: white">
+  <div class="row" style="height: 75vh">
+    <div class="col-md-4">
+      <div class="row" style="padding: 5px; height: 20vh">
+        <div class="col-md-12 user-dashcard">
+          <div class="row ps-2 pt-3">
+            <div class="col-md-2">
+              <% unless @user.photo.key.blank? %>
+                <%= cl_image_tag @user.photo.key, class: "avatar-large", style: "border: 3px solid rgba(0,0,0,0.3)" %>
+              <% else %>
+                <%= image_tag "profile_placeholder.png", class: "avatar-large", style: "border: 3px solid rgba(0,0,0,0.3)" %>
+              <% end %>
+            </div>
+            <div class="col-md-10">
+              <h5><%= @user.first_name %> <%= @user.last_name %></h5>
+              <p style="opacity: 0.66"><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="row ps-2">
+            <div class="col-md-8">
+              <p style="opacity: 0.88"><%= @user.city %> <span style="opacity: 0.33">•</span> <%= @user.nation %></p>
+            </div>
+            <div class="col-md-4">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-sm btn-outline-info" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding: 5px; height: 55vh">
+        <div class="col-md-12 dashcard">
+          <h5>My Purchases</h5>
+          <hr>
+          <% if @user.purchases.empty? %>
+            <p style="opacity: 0.7"><em>Your purchased items will be listed here</em></p>
+          <% else %>
+            <ul class="list-group">
+              <% @user.purchases.each do |purchase| %>
+                <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
+                  <i class="fa-regular fa-calendar-check"></i> <%= purchase.item %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row" style="padding: 5px; height: 75vh">
+        <div class="col-md-12 dashcard">
+          <h5>Give a second life to your materials and reduce your carbon footprint. <%= link_to "Post your items!", new_item_path, class: "link-success" %></h5>
+          <hr>
+          <% if @user.items.empty? %>
+            <p style="opacity: 0.7"><em>Your items will be listed here</em></p>
+          <% else %>
+            <ul class="list-group">
+              <% @user.items.each do |item| %>
+                <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
+                  <i class="fa-regular fa-calendar-check"></i> <%= item.name %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
