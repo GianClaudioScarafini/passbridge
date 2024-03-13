@@ -51,6 +51,13 @@
                       autofocus: true,
                       input_html: { autocomplete: "zip" }%>
         </div>
+        <div class="flex-fill">
+          <%= f.input :nation,
+                      required: true,
+                      autofocus: true,
+                      label: "Country",
+                      input_html: { autocomplete: "nation" }%>
+        </div>
       </div>
       <div class="d-flex gap-3">
         <div class="flex-fill">
