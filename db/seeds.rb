@@ -11,7 +11,7 @@ user1 = User.new(
   city: "Berlin",
   state: "Berlin",
   zip: "10437",
-  country: "Germany",
+  nation: "Germany",
   phone: "01799900222",
   password: "123456"
 )
@@ -28,7 +28,7 @@ user2 = User.new(
   city: "London",
   state: "London",
   zip: "W2 4DJ",
-  country: "United Kingdom",
+  nation: "United Kingdom",
   phone: "02800011858",
   password: "123456"
 )
