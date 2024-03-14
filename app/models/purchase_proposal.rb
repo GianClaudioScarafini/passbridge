@@ -1,0 +1,2 @@
+class PurchaseProposal < ApplicationRecord
+end
