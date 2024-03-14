@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :purchases, only: [:show, :update]
   resources :users, only: [:show]
+
+  get 'dashboard', to: 'pages#dashboard', as: :dashboard
 end

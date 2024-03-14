@@ -11,7 +11,7 @@ user1 = User.new(
   city: "Berlin",
   state: "Berlin",
   zip: "10437",
-  country: "Germany",
+  nation: "Germany",
   phone: "01799900222",
   password: "123456"
 )
@@ -21,14 +21,15 @@ user1.save
 
 file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww")
 user2 = User.new(
-  first_name: "Frank",
-  last_name: "Schmidt",
-  email: "frank@gmail.com",
-  address: "Dresdener Str. 2",
-  city: "Münster",
-  state: "North Rhine-Westphalia",
-  zip: "64839",
-  country: "Germany",
+
+  first_name: "Eric",
+  last_name: "Smith",
+  email: "lucy@gmail.com",
+  address: "81 Kensington Gardens Square",
+  city: "London",
+  state: "London",
+  zip: "W2 4DJ",
+  nation: "United Kingdom",
   phone: "02800011858",
   password: "123456"
 )

@@ -1,0 +1,16 @@
+.user-dashcard {
+  border-radius: 7px;
+  background: rgb(57,61,98);
+  background: linear-gradient(90deg, rgba(80, 86, 136, 0.5) 0%, rgba(37, 109, 72, 0.5) 100%);
+  border: 1px solid rgba(200, 200, 200, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.dashcard {
+  border-radius: 7px;
+  background: rgb(57,61,98);
+  background: linear-gradient(90deg, rgba(62, 63, 72, 0.5) 0%, rgba(61, 74, 68, 0.5) 100%);
+  padding: 10px 15px;
+  border: 1px solid rgba(200, 200, 200, 0.2);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}

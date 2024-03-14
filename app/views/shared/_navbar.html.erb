@@ -21,8 +21,14 @@
             <i class="fa-solid fa-caret-down" style="color: whitesmoke"></i>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Profile", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to dashboard_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-circle-user"></i>
+                <strong> Dashboard</strong>
+              <% end %>
+              <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item", style: "color: red" do %>
+                <i class="fa-regular fa-circle-xmark"></i>
+                <span> Log out</span>
+              <% end %>
             </div>
           </li>
         <% else %>
