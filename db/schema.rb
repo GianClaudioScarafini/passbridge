@@ -106,7 +106,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_11_151144) do
     t.string "city"
     t.string "state"
     t.string "zip"
-    t.string "nation"
+    t.string "country"
     t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
