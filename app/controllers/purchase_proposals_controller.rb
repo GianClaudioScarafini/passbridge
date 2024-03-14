@@ -35,16 +35,16 @@ class PurchaseProposalsController < ApplicationController
 
     def destroy
       @purchase_proposal.destroy
-      redirect_to purchase_proposals_url, notice: 'Purchase proposal was successfully destroyed.'
+      redirect_to purchase_proposals_url, notice: 'Purchase proposal was successfully deleted.'
     end
 
     private
       def set_purchase_proposal
         @purchase_proposal = PurchaseProposal.find(params[:id])
       end
-
+⁄
       def purchase_proposal_params
-        params.require(:purchase_proposal).permit(:title, :description, :amount)
+        params.require(:purchase_proposal).permit(:title, :description, :price)
       end
   end
 
