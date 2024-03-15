@@ -7,17 +7,25 @@
     <div class="card-item-content">
       <div class="row-one">
         <h5 class="two-lines" ><%= item.name %></h5>
-        <p>3km</p>
+        <div class="card-distance">
+          <p>3km</p>
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
       </div>
       <div class="row-two">
         <p><%= item.description %></p>
       </div>
       <div class="row-tree">
         <div class="card-price">
-          <p><%= item.price %>€</p>
+          <p><%= sprintf("%.2f", item.price) %> <small class="card-sub">€/item</small> </p>
         </div>
         <div class="card-item-q">
-          <%= item.quantity %>
+          <p>
+          <% if item.quantity.eql? 1  %>
+            <%= item.quantity %> <small class="card-sub">item</small></p>
+          <% else  %>
+            <%= item.quantity %> <small class="card-sub">items</small></p>
+          <% end %>
         </div>
         </div>
     </div>

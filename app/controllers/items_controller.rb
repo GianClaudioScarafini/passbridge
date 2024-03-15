@@ -2,12 +2,14 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
 
+    @user = current_user
     @markers = @items.geocoded.map do |flat|
       {
         lat: flat.latitude,
         lng: flat.longitude
       }
     end
+
   end
 
   def show
