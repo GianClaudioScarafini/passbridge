@@ -25,8 +25,11 @@
 
   <%# this is a place holder for the maps %>
   <div class="item-card-map-location"   data-controller="map"
+  dara-map-user-value="<%= @usermarker.to_json %>"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+  <%# raise  %>
 
   </div>
 </div>

@@ -1,14 +1,24 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-
     @user = current_user
-    @markers = @items.geocoded.map do |flat|
+    #traform user to array
+
+    @markers = @items.geocoded.map do |item|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: item.latitude,
+        lng: item.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {item: item}),
+        marker_html: render_to_string(partial: "marker", locals: {item: item})
       }
     end
+
+    @user_coordinates = { lat: @user.latitude,
+                          lng: @user.longitude ,
+                          marker_html: render_to_string(partial: "marker", locals: {item: current_user}) }
+
+    @markers << @user_coordinates
+
 
   end
 
