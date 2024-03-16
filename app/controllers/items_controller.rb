@@ -28,22 +28,39 @@ class ItemsController < ApplicationController
     @item_array = Item.where(id: @item.id)
     @user = current_user
 
-    @markers = @item_array.geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {item: item}),
-        marker_html: render_to_string(partial: "marker", locals: {item: item})
-      }
-    end
+    @markers = [{
+                  label: "object",
+                  lat: @item.latitude,
+                  lng: @item.longitude,
+                  info_window_html: render_to_string(partial: "info_window", locals: {item: @item}),
+                  marker_html: render_to_string(partial: "marker", locals: {item: @item})
+                },
+                {
+                  label: "user",
+                  lat: @user.latitude,
+                  lng: @user.longitude,
+                  marker_html: render_to_string(partial: "marker", locals: {item: current_user})
+
+                }]
 
 
 
-    @user_coordinates = { lat: @user.latitude,
-                          lng: @user.longitude ,
-                          marker_html: render_to_string(partial: "marker", locals: {item: current_user}) }
+    # @markers = @item_array.geocoded.map do |item|
+    #   {
+    #     lat: item.latitude,
+    #     lng: item.longitude,
+    #     info_window_html: render_to_string(partial: "info_window", locals: {item: item}),
+    #     marker_html: render_to_string(partial: "marker", locals: {item: item})
+    #   }
+    # end
 
-    @markers << @user_coordinates
+
+
+    # @user_coordinates = { lat: @user.latitude,
+    #                       lng: @user.longitude ,
+    #                       marker_html: render_to_string(partial: "marker", locals: {item: current_user}) }
+
+    # @markers << @user_coordinates
 
   end
 
