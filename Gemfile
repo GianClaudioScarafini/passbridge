@@ -52,6 +52,8 @@ gem "bootsnap", require: false
 
 gem "cloudinary"
 
+gem "pundit"
+
 gem "bootstrap", "~> 5.2"
 gem "devise"
 gem "autoprefixer-rails"
