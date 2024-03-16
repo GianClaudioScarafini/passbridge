@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :address, :city, :state, :zip, :nation, :phone, :photo])
   end
 
+
+
+
   # Pundit: allow-list approach
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
@@ -21,6 +24,16 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
+  
+  protected
+
+  def after_sign_in_path_for(resource)
+    dashboard_path
+  end
+
+  def after_sign_up_path_for(resource)
+    dashboard_path
+  end
 
   private
 

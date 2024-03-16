@@ -1,37 +1,85 @@
 <div class="container mt-5" style="color: white">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <h2>Edit your profile</h2>
+  <hr>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
+      <div class="d-flex gap-3">
+        <div class="flex-fill">
+          <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "first_name" }%>
+        </div>
+        <div class="flex-fill">
+          <%= f.input :last_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "last_name" }%>
+        </div>
+      </div>
       <%= f.input :email, required: true, autofocus: true %>
-
+      <div class="d-flex gap-3">
+        <div class="flex-grow-1">
+          <%= f.input :address,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "address" }%>
+        </div>
+        <div>
+          <%= f.input :city,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "city" }%>
+        </div>
+      </div>
+      <div class="d-flex gap-3">
+        <div class="flex-fill">
+          <%= f.input :state,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "state" }%>
+        </div>
+        <div class="flex-fill">
+          <%= f.input :zip,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "zip" }%>
+        </div>
+        <div class="flex-fill">
+          <%= f.input :nation,
+                      required: true,
+                      autofocus: true,
+                      label: "Country",
+                      input_html: { autocomplete: "nation" }%>
+        </div>
+      </div>
+      <div class="d-flex gap-3">
+        <div class="flex-fill">
+          <%= f.input :phone, required: true, autofocus: true, input_html: { autocomplete: "phone" } %>
+        </div>
+        <div class="flex-fill">
+          <%= f.input :photo, as: :file %>
+        </div>
+      </div>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
-                  required: true,
-                  input_html: { autocomplete: "current-password" } %>
+      <hr>
+      <div style="padding: 20px; background-color: rgba(255,255,255,0.2); border-radius: 10px; border: 1px solid rgba(255,255,255,0.4)">
+        <%= f.input :current_password,
+                    hint: "we need your current password to confirm your changes",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+      </div>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Update" %>
+    <div class="form-actions" style="padding-top: 15px">
+      <%= f.button :submit, "Update", class: "main-button" %>
     </div>
   <% end %>
 
-  <!-- <h3>Cancel my account</h3>
-
-  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-  <%= link_to "Back", :back %> -->
 </div>
