@@ -1,5 +1,5 @@
 <%if item.latitude == current_user.latitude  %>
   <%= current_user.first_name %>
 <%else  %>
-  <%= cl_image_tag item.images[0].key, height: 30, width: 30, alt: "Logo", calss: "item-logo-map" %>
+  <%= cl_image_tag item.images[0].key, alt: "Logo", class: "item-logo-map" %>
 <%end%>

@@ -26,13 +26,24 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @items = Item.all
     @item_array = Item.where(id: @item.id)
+    @user = current_user
 
-    @markers = @item_array.geocoded.map do |flat|
+    @markers = @item_array.geocoded.map do |item|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: item.latitude,
+        lng: item.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {item: item}),
+        marker_html: render_to_string(partial: "marker", locals: {item: item})
       }
     end
+
+
+
+    @user_coordinates = { lat: @user.latitude,
+                          lng: @user.longitude ,
+                          marker_html: render_to_string(partial: "marker", locals: {item: current_user}) }
+
+    @markers << @user_coordinates
 
   end
 
