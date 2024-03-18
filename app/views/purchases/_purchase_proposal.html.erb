@@ -1,0 +1,17 @@
+<div id="purchaseProposalPopup" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Purchase Proposal</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <%= form_with(model: @purchase, local: true) do |form| %>
+          <%= form.label :quantity %>
+          <%= form.number_field :quantity %>
+          <%= form.submit "Submit Proposal", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
