@@ -1,6 +1,9 @@
-<div class="outer m-3">
+<div class="outer m-3"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   <%=link_to "Back to all items", items_path, class: "main-button"%>
-  <div class="container d-flex justify-content mt-3">
+  <div class="container d-flex justify-content mt-3" >
     <div class="card">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -30,20 +33,18 @@
             <p class="card-condition"><strong>condition: </strong><%= @item.condition %></p>
           </div>
           <p class="card-description"><%= @item.description %></p>
-          <p class="dates">available from <%= @item.start_date.strftime("%d-%m-%Y") %> to <%= @item.end_date.strftime("%d-%m-%Y") %></p>
-          <h4><strong><%= @item.price %> €</strong></h4>
+          <p class="dates">available from <%= @item.start_date.strftime("%y %B %Y") %> to <%= @item.end_date.strftime("%y %B %Y") %></p>
+          <h4><strong><%= sprintf("%.2f", @item.price) %> €</strong></h4>
         </div>
         <div class="card-shipping-proposal">
           <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
+          <p data-map-target="distance"> </p>
           <div class="main-button">send proposal</div>
         </div>
       </div>
     </div>
 
-  <div class="item-card-map-location"   data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-
+  <div class="item-card-map-location" data-map-target="map">
   </div>
   </div>
 

@@ -4,7 +4,8 @@
   border-radius: 10px;
   background-color: transparent;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
-  color: #ffffff
+  color: #ffffff;
+  width: 60%;
 }
 
 .card-body {
@@ -58,6 +59,7 @@
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  width: 100%;
 }
 
 .card-image {
