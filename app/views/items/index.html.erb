@@ -1,22 +1,10 @@
 <%# this is the search bar %>
-<div class="search-bar">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <form action="/items" method="get">
-          <div class="input-group">
-            <input type="text" class="form-control" name="query" placeholder="Search for items">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="submit">Search</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  <%# this displays the search results %>
-<% @items.each do |item| %>
-  <p><%= item.name %>: <%= item.description %> - <%= item.price %></p>
-<% end %>
+<div class="search">
+  <%= form_tag(items_path, method: "get", class: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</div>
 
   <%# thise are the list of items %>
   <div class="items-cards-array">

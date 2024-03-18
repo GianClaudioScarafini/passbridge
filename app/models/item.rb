@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
-  <<<<<<< HEAD
   def self.search(search)
     if search
       user_type = User.find_by(name: search)
@@ -23,13 +22,4 @@ class Item < ApplicationRecord
       @items = Item.all
     end
   end
-=======
-  validates :name, :location, :description, :price, :condition, :quantity, :start_date, :end_date, presence: true
-<<<<<<< HEAD
->>>>>>> 969ea09bcb0f718f42df242a21606e0c72ec7ce4
-=======
-
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
->>>>>>> 2697ebdca69c102488a851592a784bee5d036b07
 end
