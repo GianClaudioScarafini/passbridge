@@ -1,13 +1,12 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show create destroy]
+  before_action :set_item, only: [:show, :destroy]
 
   def index
 
     @items = policy_scope(Item).all
 
-
     @user = current_user
-    #traform user to array
+    #transform user to array
 
     @markers = @items.geocoded.map do |item|
       {
@@ -24,7 +23,6 @@ class ItemsController < ApplicationController
 
     @markers << @user_coordinates
 
-
   end
 
   def show
@@ -32,7 +30,6 @@ class ItemsController < ApplicationController
     @items = Item.all
     @item_array = Item.where(id: @item.id)
     @user = current_user
-
 
     @markers = [{
                   label: "object",
@@ -48,7 +45,6 @@ class ItemsController < ApplicationController
                   marker_html: render_to_string(partial: "marker", locals: {item: current_user})
 
                 }]
-
   end
 
   def new
@@ -57,6 +53,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(item_params)
     @item.user = current_user
     authorize @item
     if @item.save
