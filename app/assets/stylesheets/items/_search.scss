@@ -1,0 +1,27 @@
+/* Style the form */
+.search-form {
+  margin-bottom: 20px; /* Add some space below the form */
+}
+
+/* Style the text field */
+.search-form input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the submit button */
+.search-form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #f5f5f580; /* Match the footer background color */
+  color: #555; /* Match the footer text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Change button color on hover */
+.search-form input[type="submit"]:hover {
+  color: #042a53c3; /* Adjust hover color */
+}
