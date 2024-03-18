@@ -1,18 +1,23 @@
 <%# this is the search bar %>
-<div class= "m-2">
-  <form novalidate="novalidate" class="simple_form search" action="/" accept-charset="UTF-8" method="get">
-    <div class="search-form-control form-group d-flex mt-3">
-      <input class="form-control string required mx-3" type="text" name="search[query]" id="search_query" />
-      <button name="button" type="submit" class="main-button">
-        <i class="fas fa-search"></i> Search
-      </button>
+<div class="search-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="/items" method="get">
+          <div class="input-group">
+            <input type="text" class="form-control" name="query" placeholder="Search for items">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-  </form>
-</div>
+  <%# this displays the search results %>
+<% @items.each do |item| %>
+  <p><%= item.name %>: <%= item.description %> - <%= item.price %></p>
+<% end %>
 
-
-
-<div class="card-and-map">
   <%# thise are the list of items %>
   <div class="items-cards-array">
 
