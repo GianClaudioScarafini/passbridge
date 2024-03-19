@@ -24,13 +24,13 @@ user2 = User.new(
 
   first_name: "Eric",
   last_name: "Smith",
-  email: "lucy@gmail.com",
-  address: "81 Kensington Gardens Square",
-  city: "London",
-  state: "London",
-  zip: "W2 4DJ",
-  nation: "United Kingdom",
-  phone: "02800011858",
+  email: "eric@gmail.com",
+  address: "Chrischonasstrasse 71",
+  city: "Lörrach",
+  state: "Baden-Württemberg",
+  zip: "79540",
+  nation: "Germany",
+  phone: "01788811333",
   password: "123456"
 )
 user2.photo.attach(io: file, filename: "user2.png", content_type: "image/png")

@@ -25,3 +25,59 @@
   color: black;
   transition: 0.2s ease-out 100ms;
 }
+
+.edit-button {
+  all: unset;
+  width: 50px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: black;
+  border-radius: 10px;
+  position: relative;
+  color: #f0f0f0;
+  z-index: 1;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: background-color 1s ease-out 100ms;
+}
+
+.edit-button:hover {
+  background: #f0f0f0;
+  color: black;
+  transition: 0.2s ease-out 100ms;
+}
+
+.delete-button {
+  all: unset;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: red;
+  border-radius: 10px;
+  position: relative;
+  color: #f0f0f0;
+  z-index: 1;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: background-color 1s ease-out 100ms;
+}
+
+.delete-button:hover {
+  background: #f0f0f0;
+  color: red;
+  transition: 0.2s ease-out 100ms;
+}

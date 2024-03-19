@@ -22,6 +22,16 @@ class ItemPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    # Only the user who created the item can edit it
+    update?
+  end
+
+  def update?
+    # Only the user who created the item can update it
+    record.user == user
+  end
+
   def destroy?
     # Only the user who created the item can delete it
     record.user == user

@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
 
@@ -72,13 +72,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    authorize @item
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.user = current_user
-
+    authorize @item
     @item.update(item_params)
     redirect_to item_path(@item)
   end

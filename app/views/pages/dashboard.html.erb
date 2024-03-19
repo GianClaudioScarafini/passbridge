@@ -55,10 +55,15 @@
             <ul class="list-group">
               <% @user.items.each do |item| %>
                 <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
-                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px" %> <strong><%= item.name %></strong> • <%= item.price %>0€ • <em><%= item.condition %></em>   
-                  <% if policy(item).destroy?%>
-                    <%= link_to "X", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "link-danger", style: "text-decoration: none" %>
+                <div class="item-list-card">
+                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px" %> <strong><%= item.name %></strong><%= item.price %>0€<em><%= item.condition %></em>   
+                  <% if policy(item).edit? %>
+                    <%= link_to "Edit", edit_item_path(item), class: "edit-button", style: "text-decoration: none" %>
                   <% end %>
+                  <% if policy(item).destroy? %>
+                    <%= link_to "X", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-button", style: "text-decoration: none" %>
+                  <% end %>
+                </div>
                 </li>
               <% end %>
             </ul>
