@@ -10,4 +10,5 @@ class ShippingMethod < ApplicationRecord
     truck:               7,
     drone:               8
   }
+  has_many :item_shipping_methods
 end

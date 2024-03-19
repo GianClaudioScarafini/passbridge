@@ -18,6 +18,8 @@ user1 = User.new(
 user1.photo.attach(io: file, filename: "user1.png", content_type: "image/png")
 user1.save
 
+p "users1 saved Lisa Müller"
+
 
 file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww")
 user2 = User.new(
@@ -36,6 +38,7 @@ user2 = User.new(
 user2.photo.attach(io: file, filename: "user2.png", content_type: "image/png")
 user2.save
 
+p "users2 saved Eric Smith"
 
 file = URI.open("https://images.unsplash.com/photo-1629608444154-6d052691632f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJyaWNrc3xlbnwwfHwwfHx8MA%3D%3D")
 item1 = Item.new(
@@ -96,7 +99,7 @@ file = URI.open("https://images.unsplash.com/photo-1603517432573-707d595ef8ab?w=
 item3.images.attach(io: file, filename: "item3_2.png", content_type: "image/png")
 item3.save
 
-
+p "item3 saved"
 file = URI.open("https://images.unsplash.com/photo-1573871924474-04f515cf7399?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fGJyaWNrfGVufDB8fDB8fHww")
 item4 = Item.new(
   name: "Hollow bricks",
@@ -111,6 +114,7 @@ item4 = Item.new(
 )
 item4.images.attach(io: file, filename: "item4_1.png", content_type: "image/png")
 item4.save
+p "item4 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1550007976-1cb41faa2356?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY0fHxicmlja3N8ZW58MHx8MHx8fDA%3D")
 item4.images.attach(io: file, filename: "item4_2.png", content_type: "image/png")
@@ -136,6 +140,7 @@ file = URI.open("https://images.unsplash.com/photo-1656214311858-a47d03973f2c?w=
 item5.images.attach(io: file, filename: "item5_2.png", content_type: "image/png")
 item5.save
 
+p "item5 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1517705008128-361805f42e86?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWFtZXMlMjB3aGl0ZSUyMGNoYWlyfGVufDB8fDB8fHww")
 item6 = Item.new(
@@ -157,6 +162,8 @@ item6.images.attach(io: file, filename: "item6_2.png", content_type: "image/png"
 item6.save
 
 
+p "item6 saved"
+
 file = URI.open("https://images.unsplash.com/photo-1630835016348-ba2854bbf78b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVqaSUyMGJlZHxlbnwwfHwwfHx8MA%3D%3D")
 item7 = Item.new(
   name: "Night table set",
@@ -175,6 +182,8 @@ item7.save
 file = URI.open("https://images.unsplash.com/photo-1630835016331-1a9b60581820?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bXVqaSUyMGJlZHxlbnwwfHwwfHx8MA%3D%3D")
 item7.images.attach(io: file, filename: "item7_2.png", content_type: "image/png")
 item7.save
+
+p "item7 saved"
 
 
 file = URI.open("https://images.unsplash.com/photo-1621687438255-08b63e0b64ec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGNhcnBldHxlbnwwfHwwfHx8MA%3D%3D")
@@ -195,7 +204,7 @@ item8.save
 file = URI.open("https://images.unsplash.com/photo-1602795493253-c1da1fed546a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGNhcnBldHxlbnwwfHwwfHx8MA%3D%3D")
 item8.images.attach(io: file, filename: "item8_2.png", content_type: "image/png")
 item8.save
-
+p "item8 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHNvZmElMjBncmVlbnxlbnwwfHwwfHx8MA%3D%3D")
 item9 = Item.new(
@@ -215,6 +224,8 @@ item9.save
 file = URI.open("https://images.unsplash.com/photo-1520687052856-eb38da98adeb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHNvZmElMjBncmVlbnxlbnwwfHwwfHx8MA%3D%3D")
 item9.images.attach(io: file, filename: "item9_2.png", content_type: "image/png")
 item9.save
+
+p "item9 saved"
 
 
 file = URI.open("https://images.unsplash.com/photo-1640126288964-60593b8563e1?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZWQlMjBmdXJuaXR1cmV8ZW58MHx8MHx8fDA%3D")
@@ -236,6 +247,7 @@ file = URI.open("https://images.unsplash.com/photo-1546552616-6c9bd78ec972?q=80&
 item10.images.attach(io: file, filename: "item10_2.png", content_type: "image/png")
 item10.save
 
+p "item10 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1645401534895-ff4be8e98e75?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item11 = Item.new(
@@ -256,6 +268,7 @@ file = URI.open("https://images.unsplash.com/photo-1458225991256-551e9ddc7782?w=
 item11.images.attach(io: file, filename: "item11_2.png", content_type: "image/png")
 item11.save
 
+p "item11 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1616661317985-aeb2a13016d6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBpcGVzfGVufDB8fDB8fHww")
 item12 = Item.new(
@@ -275,6 +288,8 @@ item12.save
 file = URI.open("https://plus.unsplash.com/premium_photo-1674406051718-0d4bc46f5b93?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGlwZXN8ZW58MHx8MHx8fDA%3D")
 item12.images.attach(io: file, filename: "item12_2.png", content_type: "image/png")
 item12.save
+
+p "item12 saved"
 
 
 file = URI.open("https://plus.unsplash.com/premium_photo-1676154517862-3d39720f63f5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmV0b258ZW58MHx8MHx8fDA%3D")
@@ -296,6 +311,7 @@ file = URI.open("https://images.unsplash.com/photo-1564864829977-701822524526?w=
 item13.images.attach(io: file, filename: "item13_2.png", content_type: "image/png")
 item13.save
 
+p   "item13 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1623111771732-6eadcf47b60b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0aHR1YiUyMGFudGlrfGVufDB8fDB8fHww")
 item14 = Item.new(
@@ -316,6 +332,8 @@ file = URI.open("https://images.unsplash.com/photo-1623114112825-af5da54b79bb?w=
 item14.images.attach(io: file, filename: "item14_2.png", content_type: "image/png")
 item14.save
 
+p "item14 saved"
+
 
 file = URI.open("https://images.unsplash.com/photo-1468781552669-f1039d18ed34?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d29vZGVuJTIwZG9vciUyMG9sZHxlbnwwfHwwfHx8MA%3D%3D")
 item15 = Item.new(
@@ -335,7 +353,7 @@ item15.save
 file = URI.open("https://images.unsplash.com/photo-1516619372219-1bf6ebdce4a0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdvb2RlbiUyMGRvb3IlMjBvbGR8ZW58MHx8MHx8fDA%3D")
 item15.images.attach(io: file, filename: "item15_2.png", content_type: "image/png")
 item15.save
-
+p "item15 saved"
 
 file = URI.open("https://images.unsplash.com/photo-1647592097679-b8f57f875e2f?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 item16 = Item.new(
@@ -355,3 +373,15 @@ item16.save
 file = URI.open("https://images.unsplash.com/photo-1647592098428-ec3c05dbaeb3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D")
 item16.images.attach(io: file, filename: "item16_2.png", content_type: "image/png")
 item16.save
+
+p "item16 saved"
+
+
+
+
+# create a purchase for on one user to an other user
+
+p "create a purchase for on one user to an other user"
+car = ShippingMethod.create!(co2_ratio: 10, method: :car)
+purchase = Purchase.create!(user: user2, item: item1, quantity: 10,status: 0)
+item_shipping = ItemShippingMethod.create!(item: item1, shipping_method: car, purchase: purchase)

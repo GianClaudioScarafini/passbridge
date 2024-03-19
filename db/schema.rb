@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_15_113156) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_19_183422) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_113156) do
     t.bigint "shipping_method_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "purchase_id"
     t.index ["item_id"], name: "index_item_shipping_methods_on_item_id"
+    t.index ["purchase_id"], name: "index_item_shipping_methods_on_purchase_id"
     t.index ["shipping_method_id"], name: "index_item_shipping_methods_on_shipping_method_id"
   end
 
@@ -72,7 +74,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_113156) do
   create_table "purchases", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
-    t.bigint "shipping_method_id", null: false
     t.integer "quantity"
     t.float "distance"
     t.float "total_co2_emitions"
@@ -81,7 +82,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_113156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_purchases_on_item_id"
-    t.index ["shipping_method_id"], name: "index_purchases_on_shipping_method_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
@@ -117,9 +117,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_113156) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "item_shipping_methods", "items"
+  add_foreign_key "item_shipping_methods", "purchases"
   add_foreign_key "item_shipping_methods", "shipping_methods"
   add_foreign_key "items", "users"
   add_foreign_key "purchases", "items"
-  add_foreign_key "purchases", "shipping_methods"
   add_foreign_key "purchases", "users"
 end
