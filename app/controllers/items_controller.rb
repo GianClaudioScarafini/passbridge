@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
 
   def index
 
-    @items = policy_scope(Item).all
+    # all items that are not equal to the current user
+    @items = policy_scope(Item).where.not(user: current_user)
+
 
     @user = current_user
     #transform user to array
