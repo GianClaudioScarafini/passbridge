@@ -20,7 +20,12 @@ export default class extends Controller {
         .then((data) => {
             // display distance
             const distance = data.routes[0].legs[0].distance
-            this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}`
+            if (distance < 100000) {
+                this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}km`
+            } else {
+                this.distanceTarget.innerText = `> 100 km`
+            }
+            // this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}km`
         })
     }
 }
