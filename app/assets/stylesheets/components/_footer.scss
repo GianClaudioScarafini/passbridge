@@ -10,6 +10,7 @@ footer {
 
 .footer-content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   color: white;
 }
@@ -30,10 +31,14 @@ footer {
 
 .middle-section {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .middle-section p {
   margin: 0;
+  text-align: center;
 }
 
 .social-icons {
