@@ -1,11 +1,10 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
-
-    if params[:search]
-        @items = Item.where("name LIKE ?", "%#{params[:search]}%")
-      else
-        @Items = Item.all
+    if params[:search].present?
+      search_term = params[:search].downcase
+      @items = Item.where("lower(name) LIKE ?", "%#{search_term}%")
+    else
+      @items = Item.all
     end
 
     @user = current_user
