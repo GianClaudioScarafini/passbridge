@@ -2,13 +2,12 @@
 <div class="search">
   <%= form_tag(items_path, method: "get", class: "search-form", local: "true") do %>
     <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", class: "search-button" %>
   <% end %>
 </div>
 
 <%# display results %>
 <% @items.each do |item| %>
-  <%= item.name %>
 <% end %>
 
 <%# thise are the list of items %>
