@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many :item_shipping_methods
   has_many :shipping_methods, through: :item_shipping_methods
+  has_one :purchase
 
   has_many_attached :images
 

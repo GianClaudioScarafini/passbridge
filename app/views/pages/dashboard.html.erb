@@ -1,4 +1,15 @@
-<div class="container mt-5" style="color: white">
+<div class="container mt-5" style="color: white" data-controller="modal">
+  <!-- The Modal -->
+  <div id="myModal" class="purchase-modal" data-modal-target="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" data-action="click->modal#close">&times;</span>
+      <div data-modal-target="modalContent"></div>
+    </div>
+
+  </div>
+
   <div class="row" style="height: 75vh">
     <div class="col-md-4">
       <div class="row" style="padding: 5px; height: 20vh">
@@ -57,6 +68,15 @@
                 <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
                 <div class="item-list-card">
                   <%= cl_image_tag item.images.first.key, width: "40px", height: "40px" %> <strong><%= item.name %></strong><%= item.price %>0€<em><%= item.condition %></em>   
+                  <% unless item.purchase.nil? %>
+                    <% if item.purchase.status == "pending" %>
+                      <button data-action="click->modal#display" data-purchase="<%= item.purchase.id %>">See purchase proposal</button>
+                    <% elsif item.purchase.status == "accepted" %>
+                      <span style="color: green">Accepted</span>
+                    <% else %>
+                      <span style="color: red">Denied</span>
+                    <% end %>
+                  <% end %>
                   <% if policy(item).edit? %>
                     <%= link_to "Edit", edit_item_path(item), class: "edit-button", style: "text-decoration: none" %>
                   <% end %>

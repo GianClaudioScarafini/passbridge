@@ -355,3 +355,7 @@ item16.save
 file = URI.open("https://images.unsplash.com/photo-1647592098428-ec3c05dbaeb3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D")
 item16.images.attach(io: file, filename: "item16_2.png", content_type: "image/png")
 item16.save
+
+ShippingMethod.create(co2_ratio: 1.03, method: 1)
+
+Purchase.create(user: user1, item: item9, shipping_method_id: 1, quantity: 1, distance: 10.0, total_co2_emitions: 0.5, price: 435.00, status: 1)

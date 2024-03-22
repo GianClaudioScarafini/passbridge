@@ -1,0 +1,14 @@
+<div class="modal-info">
+  <h4><%= purchase.user.first_name %> <%= purchase.user.last_name %> wants to buy <%= purchase.item.quantity %> <%= purchase.item.name.downcase %></h4>
+  <div class="accept-decline-buttons">
+    <%= simple_form_for @purchase do |f| %>
+      <%= f.hidden_field :status, value: "accepted" %>
+      <%= f.submit "accept", class:"main-button"%>
+    <% end %>
+
+    <%= simple_form_for @purchase do |f| %>
+      <%= f.hidden_field :status, value: "declined" %>
+      <%= f.submit "decline", class:"main-button" %>
+    <% end %>
+  </div>
+</div>
