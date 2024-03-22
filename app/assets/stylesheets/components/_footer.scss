@@ -1,5 +1,5 @@
 footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -11,6 +11,7 @@ footer {
 .footer-content {
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .left-section {
@@ -24,16 +25,15 @@ footer {
 
 .left-section,
 .right-section {
-  width: auto; /* Set the width to auto */
+  width: auto;
 }
 
 .middle-section {
-  flex-grow: 1; /* Let the middle section take up the remaining space */
-  text-align: center; /* Center-align the text */
+  flex-grow: 1;
 }
 
 .middle-section p {
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .social-icons {
