@@ -1,16 +1,16 @@
-<div id="purchaseProposalPopup" class="modal fade" role="dialog">
+<div class="modal fade" id="<%= item.id%>" tabindex="-1" aria-labelledby="<%= item.id%>Label" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Purchase Proposal</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5 class="modal-title" id="<%= item.id%>Label">Purchase Proposal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= form_with(model: @purchase, local: true) do |form| %>
-          <%= form.label :quantity %>
-          <%= form.number_field :quantity %>
-          <%= form.submit "Submit Proposal", class: "btn btn-primary" %>
-        <% end %>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

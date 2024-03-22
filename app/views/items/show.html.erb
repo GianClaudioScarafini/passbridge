@@ -39,7 +39,12 @@
         <div class="card-shipping-proposal">
           <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
           <p data-map-target="distance"> </p>
-          <div class="main-button">send proposal</div>
+            <button type="button" class="main-button" data-bs-toggle="modal" data-bs-target="#<%= @item.id %>">
+              send proposal
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
         </div>
       </div>
     </div>
@@ -96,4 +101,5 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+  <%= render "purchases/purchase_proposal", item: @item %>
 </div>
