@@ -28,4 +28,6 @@ export default class extends Controller {
             // this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}km`
         })
     }
+
+
 }

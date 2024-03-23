@@ -4,9 +4,12 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @item = Item.find(params[:item_id])
     authorize @purchase
+
+
   end
 
   def create
+    raise
     @item = Item.find(params[:item_id])
     @purchase = Purchase.new(purchase_params)
     @purchase.item = @item
@@ -22,6 +25,7 @@ class PurchasesController < ApplicationController
         render :new, status: :unprocessable_entity
       end
     end
+
   end
 
 
