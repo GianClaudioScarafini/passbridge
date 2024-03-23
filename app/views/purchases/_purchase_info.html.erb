@@ -1,14 +1,24 @@
 <div class="modal-info">
-  <h4><%= purchase.user.first_name %> <%= purchase.user.last_name %> wants to buy <%= purchase.item.quantity %> <%= purchase.item.name.downcase %></h4>
-  <div class="accept-decline-buttons">
-    <%= simple_form_for @purchase do |f| %>
-      <%= f.hidden_field :status, value: "accepted" %>
-      <%= f.submit "accept", class:"main-button"%>
-    <% end %>
+  <% purchases.each do |purchase| %>
+    <li class="list-group-item d-flex justify-content-between m-3 p-3">
+      <% if purchase.status == "pending" %>
+        <h4><%= purchase.user.first_name %> <%= purchase.user.last_name %> wants to buy <%= purchase.quantity %> <%= purchase.item.name.downcase %></h4>
+        <div class="accept-decline-buttons">
+          <%= simple_form_for purchase do |f| %>
+            <%= f.hidden_field :status, value: "accepted" %>
+            <%= f.submit "accept", class:"accept-button"%>
+          <% end %>
+          <%= simple_form_for purchase do |f| %>
+            <%= f.hidden_field :status, value: "declined" %>
+            <%= f.submit "decline", class:"decline-button" %>
+          <% end %>
+        </div>
+      <% elsif purchase.status == "accepted" %>
+        <h4 class="accept-statement">You have accepted <%= purchase.user.first_name %> <%= purchase.user.last_name %>'s purchase proposal for <%= purchase.quantity %> <%= purchase.item.name.downcase %></h4>
+      <% else %>
+      <h4 class="decline-statement">You have declined <%= purchase.user.first_name %> <%= purchase.user.last_name %>'s purchase proposal for <%= purchase.quantity %> <%= purchase.item.name.downcase %></h4>
+      <% end %>
+    </li>
+  <% end %>
 
-    <%= simple_form_for @purchase do |f| %>
-      <%= f.hidden_field :status, value: "declined" %>
-      <%= f.submit "decline", class:"main-button" %>
-    <% end %>
-  </div>
 </div>

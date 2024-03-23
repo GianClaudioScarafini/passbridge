@@ -2,7 +2,6 @@
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  <%=link_to "Back to all items", items_path, class: "main-button"%>
   <div class="container d-flex justify-content mt-3" >
     <div class="card">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -48,7 +47,7 @@
   </div>
   </div>
 
-  <h1 class="title">other items near you...</h1>
+  <h1 class="title">other items for you...</h1>
 
 <div id="carouselExampleControls" class="carousel slide">
     <div class="carousel-inner">

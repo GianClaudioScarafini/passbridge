@@ -29,7 +29,7 @@
           </div>
           <div class="row ps-2">
             <div class="col-md-8">
-              <p style="opacity: 0.88"><%= @user.city %> <span style="opacity: 0.33">•</span> <%= @user.nation %></p>
+              <p style="opacity: 0.88"><%= @user.city %> <span style="opacity: 0.33">•</span> <%= @user.nation %></p>
             </div>
             <div class="col-md-4">
               <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-sm btn-outline-info" %>
@@ -46,8 +46,14 @@
           <% else %>
             <ul class="list-group">
               <% @user.purchases.each do |purchase| %>
-                <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
-                  <i class="fa-regular fa-calendar-check"></i> <%= purchase.item %>
+                <li class="list-group-item d-flex justify-content-between">
+                  <div class="purchase-item-name">
+                    <i class="fa-solid fa-cart-shopping me-2"></i>
+                    <%= link_to purchase.item.name, item_path(purchase.item), class:"item-name"%> (x <%= purchase.quantity %>)
+                  </div>
+                  <div>
+                  | <%= purchase.status %>
+                  </div>
                 </li>
               <% end %>
             </ul>
@@ -65,24 +71,30 @@
           <% else %>
             <ul class="list-group">
               <% @user.items.each do |item| %>
-                <li class="list-group-item mb-1" style="background-color: rgba(255, 255, 255, 0.8)">
+                <li class="list-group-item">
                 <div class="item-list-card">
-                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px" %> <strong><%= item.name %></strong><%= item.price %>0€<em><%= item.condition %></em>   
-                  <% unless item.purchase.nil? %>
-                    <% if item.purchase.status == "pending" %>
-                      <button data-action="click->modal#display" data-purchase="<%= item.purchase.id %>">See purchase proposal</button>
-                    <% elsif item.purchase.status == "accepted" %>
-                      <span style="color: green">Accepted</span>
-                    <% else %>
-                      <span style="color: red">Denied</span>
+                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px", style: "border-radius: 3px" %>
+                  <strong><%= link_to item.name, item_path(item), class:"item-name"%></strong>
+                  <span></span> <em><%= item.remaining_quantity %> remaining</em>
+                  <% unless item.purchases.empty? %>
+                    <div class="d-flex align-item-center justify-content-center">
+                      <button data-action="click->modal#display" data-item="<%= item.id %>" class="proposals-button">See purchase proposals</button>
+                    </div>
+                  <% else %>
+                    <div></div>
+                  <% end %>
+                  <div class="d-flex gap-2">
+                    <% if policy(item).edit? %>
+                      <%= link_to edit_item_path(item), class: "edit-button", style: "text-decoration: none" do %>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                  <% if policy(item).edit? %>
-                    <%= link_to "Edit", edit_item_path(item), class: "edit-button", style: "text-decoration: none" %>
-                  <% end %>
-                  <% if policy(item).destroy? %>
-                    <%= link_to "X", item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-button", style: "text-decoration: none" %>
-                  <% end %>
+                    <% if policy(item).destroy? %>
+                      <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-button", style: "text-decoration: none" do %>
+                        <i class="fa-solid fa-trash"></i>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
                 </li>
               <% end %>

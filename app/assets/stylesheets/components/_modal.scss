@@ -41,13 +41,15 @@
   cursor: pointer;
 }
 
-.modal-info {
-  display: flex;
-  justify-content: space-between;
-}
-
 .accept-decline-buttons {
   display: flex;
-  justify-content: space-between;
   gap:10px;
+}
+
+.accept-statement {
+  color: rgb(34, 207, 34);
+}
+
+.decline-statement {
+  color: red;
 }

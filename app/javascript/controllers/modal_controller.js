@@ -5,8 +5,8 @@ export default class extends Controller {
   static targets = [ "modal", "modalContent" ]
   display(event) {
     this.modalTarget.style.display = "block"
-    const purchaseId = event.currentTarget.dataset.purchase
-    const url = `/purchases/${purchaseId}`
+    const itemId = event.currentTarget.dataset.item
+    const url = `/items/${itemId}/purchases`
     fetch(url, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
