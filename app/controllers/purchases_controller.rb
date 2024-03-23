@@ -4,12 +4,9 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
     @item = Item.find(params[:item_id])
     authorize @purchase
-
-
   end
 
   def create
-    raise
     @item = Item.find(params[:item_id])
     @purchase = Purchase.new(purchase_params)
     @purchase.item = @item
@@ -33,6 +30,6 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:quantity, :shipping_method_id)
+    params.require(:purchase).permit(:quantity, :shipping_method_id, :distance, :total_co2_emitions, :price)
   end
 end

@@ -2,12 +2,10 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="co2calculation"
 export default class extends Controller {
-  static targets = ["co2Value", "quantity"]
+  static targets = ["co2Value", "quantity", "displayCo2Value", "displayPrice"]
 
 
   connect() {
-
-
   }
   calculate(){
     const itmeQuantity = this.quantityTarget.value;
@@ -18,6 +16,8 @@ export default class extends Controller {
     const co2Total = distance * co2Multiplyer;
     this.insertCo2Value(co2Total);
     this.insertPrice(itmeQuantity, price);
+    this.displayCo2ValueTarget.innerText = co2Total;
+    this.displayPriceTarget.innerText = itmeQuantity * price;
   }
 
   insertCo2Value(co2Total){
