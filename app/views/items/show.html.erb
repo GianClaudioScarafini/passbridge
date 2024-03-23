@@ -39,7 +39,8 @@
         <div class="card-shipping-proposal">
           <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
           <p data-map-target="distance"> </p>
-          <div class="main-button">send proposal</div>
+          <%= link_to "send proposal", new_item_purchase_path(@item), class:"main-button" %>
+          <%# <div class="main-button">send proposal</div> %>
         </div>
       </div>
     </div>
