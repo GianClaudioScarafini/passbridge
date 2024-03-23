@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :purchases, only: [:create, :new]
+    post 'confirm_purchase', to: 'purchases#confirm_purchase', on: :member
   end
 
   resources :purchases, only: [:show, :update]

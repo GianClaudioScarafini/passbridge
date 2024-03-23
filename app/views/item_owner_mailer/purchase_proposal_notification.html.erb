@@ -1,0 +1,13 @@
+# app/views/item_owner_mailer/purchase_proposal_notification.html.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Purchase Proposal</title>
+  </head>
+  <body>
+    <h1>New Purchase Proposal</h1>
+    <p>A new purchase proposal has been made for the item <%= @purchase.item.name %> by <%= @purchase.user.email %>.</p>
+    <p>Quantity: <%= @purchase.quantity %></p>
+    <p>Shipping Method: <%= @purchase.shipping_method %></p>
+  </body>
+</html>

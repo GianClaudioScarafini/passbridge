@@ -1,0 +1,33 @@
+<div class="modal fade" id="purchase_proposal" tabindex="-1" aria-labelledby="<%=item.id%>Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="<%=item.id%>Label">Purchase Proposal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h5><%= @item.name %></h5>
+        <p><%= @item.description %></p>
+
+        <%= form_with(model: @purchase, url: confirm_purchase_item_path(@item), local: true) do |form| %>
+          <div class="mb-3">
+            <%= form.label :quantity, class: "form-label" do %>
+              Quantity:
+            <% end %>
+            <%= form.number_field :quantity, class: "form-control", min: 1, value: 1 %>
+          </div>
+          <div class="mb-3">
+            <%= form.label :shipping_method, class: "form-label" do %>
+              Shipping Method:
+            <% end %>
+            <%= form.select :shipping_method, options_for_select(['Standard', 'Express', 'Self Pick-Up']), {}, class: "form-select" %>
+          </div>
+          <%= form.submit 'Confirm', class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="main_button" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
