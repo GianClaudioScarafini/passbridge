@@ -6,8 +6,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h5>Item: <%= @item.name %></h5>
-        <p>Description: <%= @item.description %></p>
+        <h5><%= @item.name %></h5>
+        <p><%= @item.description %></p>
 
         <%= form_with(model: @purchase, url: confirm_purchase_item_path(@item), local: true) do |form| %>
           <div class="mb-3">
