@@ -1,2 +1,17 @@
-<h1>test</h1>
-<%= %>
+<div class="new-item-form">
+  <h2>Purchase your items</h2>
+  <% sentences = [
+    "...and give a second life to your Construction material",
+    "...and promote circular economy in your community",
+    "...and reduce your carbon footprint"
+  ] %>
+  <h5><%= sentences.sample %></h5>
+  <hr>
+  <%# Add the missing import for the simple_form_for helper method %>
+  <%# by including the simple_form gem in the Gemfile and running bundle install %>
+  <%= simple_form_for [ @item, @purchase ], data: { controller: "datepicker" } do |f| %>
+    <%= f.input :quantity %>
+    <%= f.association :shipping_method, label_method: :method %>
+    <%= f.button :submit, class: "main-button" %>
+  <% end %>
+</div>

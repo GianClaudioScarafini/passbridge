@@ -1,4 +1,5 @@
 class ShippingMethod < ApplicationRecord
+  has_many :purchases
   enum method: {
     foot:                0,
     bike:                1,

@@ -2,16 +2,25 @@ class PurchasesController < ApplicationController
   #create a new purchase
   def new
     @purchase = Purchase.new
+    @item = Item.find(params[:item_id])
     authorize @purchase
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @purchase = Purchase.new(purchase_params)
-    raise
-    if @purchase.save
-      redirect_to dashboard_path
+    @purchase.item = @item
+    @purchase.user = current_user
+    authorize @purchase
+    if @purchase.quantity > @item.quantity
+      flash[:alert] = "You can't buy more than the available quantity"
+      render :new, status: :unprocessable_entity
     else
-      render :new status: :unprocessable_entity
+      if @purchase.save
+        redirect_to dashboard_path
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
@@ -20,6 +29,6 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:quantity)
+    params.require(:purchase).permit(:quantity, :shipping_method_id)
   end
 end
