@@ -97,3 +97,43 @@
     </button>
   </div>
 </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">CO² Calculations</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        These are estimates of the CO² emissions caused by the shipping of this item to your location:
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Shipping method</th>
+              <th scope="col">CO² emissions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @emissions.each do |key, value| %>
+              <tr>
+                <td scope="row"><%= key %></td>
+                <td><%= value.round / 1000 %> kg</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

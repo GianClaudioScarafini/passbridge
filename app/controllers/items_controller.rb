@@ -45,6 +45,20 @@ class ItemsController < ApplicationController
                   marker_html: render_to_string(partial: "marker", locals: {item: current_user})
 
                 }]
+
+    @distance = Geocoder::Calculations.distance_between([@user.latitude, @user.longitude], [@item.latitude, @item.longitude], units: :km)
+
+    @emissions = {
+      "Walking / Bicycle / Electric Vehicle" => 0 * @distance,
+      "Motorcycle" => 100 * @distance,
+      "Car" => 200 * @distance,
+      "Small Van" => 400 * @distance,
+      "Medium Truck" => 750 * @distance,
+      "Large Truck" => 2000 * @distance,
+      "Maritime Transportation" => 4000 * @distance,
+      "Air Transportation" => 12500 * @distance
+    }
+
   end
 
   def new
