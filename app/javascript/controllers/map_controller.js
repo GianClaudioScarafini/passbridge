@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl' // Don't forget this!
 
 export default class extends Controller {
-    static targets = [ "map", "distance" ]
+    static targets = [ "map", "distance", "link" ]
     static values  = {
         apiKey: String,
         markers: Array
@@ -10,22 +10,13 @@ export default class extends Controller {
 
     connect() {
         mapboxgl.accessToken = this.apiKeyValue
-
         this.map = new mapboxgl.Map({
             container: this.mapTarget,
             style: "mapbox://styles/mapbox/dark-v11"
         })
-
         this.#addMarkersToMap()
         this.#fitMapToMarkers()
         this.#computeDistance()
-
-        // this.map.addControl(
-        //   new MapboxDirections({
-        //   accessToken: mapboxgl.accessToken
-        //   }),
-        //   'top-left'
-        //   );
     }
 
 
@@ -55,6 +46,7 @@ export default class extends Controller {
         const itemLng = this.markersValue[0].lng
         const userLat = this.markersValue[1].lat
         const userLng = this.markersValue[1].lng
+        const price = document.getElementById('item-price').getAttribute('data-price')
         const url = `https://api.mapbox.com/directions/v5/mapbox/driving/${itemLng},${itemLat};${userLng},${userLat}?access_token=${this.apiKeyValue}&geometries=geojson`
 
         fetch(url)
@@ -63,6 +55,12 @@ export default class extends Controller {
             // display distance
             const distance = data.routes[0].legs[0].distance
             this.distanceTarget.innerText = `Distance: ${(distance/1000).toFixed(1)} Km.`
+            //adding distance to link
+            const distanceLink = `?distance=${distance}`
+            const priceLink = `&price=${price}`
+            this.linkTarget.href = this.linkTarget.href + distanceLink + priceLink
+
+
 
             // draw directions
             const waypoints = data.routes[0].geometry.coordinates
