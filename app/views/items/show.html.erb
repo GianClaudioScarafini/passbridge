@@ -34,12 +34,13 @@
           </div>
           <p class="card-description"><%= @item.description %></p>
           <p class="dates">available from <%= @item.start_date.strftime("%y %B %Y") %> to <%= @item.end_date.strftime("%y %B %Y") %></p>
-          <h4><strong><%= sprintf("%.2f", @item.price) %> €</strong></h4>
+          <h4 id="item-price" data-price="<%= @item.price%>" ><strong><%= sprintf("%.2f", @item.price) %> €</strong></h4>
         </div>
         <div class="card-shipping-proposal">
           <p class="shipping-method"><strong>available shipping methods: </strong>mail, self pick-up</p>
           <p data-map-target="distance"> </p>
-          <div class="main-button">send proposal</div>
+          <%= link_to "send proposal", new_item_purchase_path(@item), data:{ map_target: "link" }, class:"main-button" %>
+          <%# <div class="main-button">send proposal</div> %>
         </div>
       </div>
     </div>

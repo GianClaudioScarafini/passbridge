@@ -1,6 +1,9 @@
 require "open-uri"
+Purchase.destroy_all
+ShippingMethod.destroy_all
 Item.destroy_all
 User.destroy_all
+
 
 file = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
 user1 = User.new(
@@ -355,3 +358,14 @@ item16.save
 file = URI.open("https://images.unsplash.com/photo-1647592098428-ec3c05dbaeb3?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D")
 item16.images.attach(io: file, filename: "item16_2.png", content_type: "image/png")
 item16.save
+
+
+ShippingMethod.create!(method: "foot", co2_ratio: 2.0)
+ShippingMethod.create!(method: "bike", co2_ratio: 1.0)
+ShippingMethod.create!(method: "airplane", co2_ratio: 2.0)
+ShippingMethod.create!(method: "car", co2_ratio: 3.0)
+ShippingMethod.create!(method: "motorcycle", co2_ratio: 2.0)
+ShippingMethod.create!(method: "electric_motorcycle", co2_ratio: 1.0)
+ShippingMethod.create!(method: "electric_car", co2_ratio: 1.0)
+ShippingMethod.create!(method: "truck", co2_ratio: 4.0)
+ShippingMethod.create!(method: "drone", co2_ratio: 0.0)
