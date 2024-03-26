@@ -360,12 +360,12 @@ item16.images.attach(io: file, filename: "item16_2.png", content_type: "image/pn
 item16.save
 
 
-ShippingMethod.create!(method: "foot", co2_ratio: 2.0)
-ShippingMethod.create!(method: "bike", co2_ratio: 1.0)
-ShippingMethod.create!(method: "airplane", co2_ratio: 2.0)
-ShippingMethod.create!(method: "car", co2_ratio: 3.0)
-ShippingMethod.create!(method: "motorcycle", co2_ratio: 2.0)
-ShippingMethod.create!(method: "electric_motorcycle", co2_ratio: 1.0)
-ShippingMethod.create!(method: "electric_car", co2_ratio: 1.0)
-ShippingMethod.create!(method: "truck", co2_ratio: 4.0)
+ShippingMethod.create!(method: "foot", co2_ratio: 0.0)
+ShippingMethod.create!(method: "bike", co2_ratio: 0.0)
+ShippingMethod.create!(method: "airplane", co2_ratio: 12500.0)
+ShippingMethod.create!(method: "car", co2_ratio: 200.0)
+ShippingMethod.create!(method: "motorcycle", co2_ratio: 100.0)
+ShippingMethod.create!(method: "electric_motorcycle", co2_ratio: 0.0)
+ShippingMethod.create!(method: "electric_car", co2_ratio: 0.0)
+ShippingMethod.create!(method: "truck", co2_ratio: 2000.0)
 ShippingMethod.create!(method: "drone", co2_ratio: 0.0)
