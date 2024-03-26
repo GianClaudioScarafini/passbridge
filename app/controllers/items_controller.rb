@@ -1,10 +1,22 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+
   def index
 
     # all items that are not equal to the current user
     @items = policy_scope(Item).where.not(user: current_user)
+    if params[:search].present?
+      sql_subquery = <<~SQL
+        items.name @@ :search
+        OR items.description @@ :search
+        OR items.location @@ :search
+      SQL
+      @items = Item.where(sql_subquery, search: params[:search])
+    else
+      @Items = Item.all
+    end
+
     @user = current_user
     #transform user to array
 
