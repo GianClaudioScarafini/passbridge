@@ -1,11 +1,12 @@
 <%# this is the search bar %>
 <div class="search">
-  <%= form_tag(items_path, method: "get", class: "search-form") do %>
+  <%= form_tag(items_path, method: "get", class: "search-form", local: "true") do %>
     <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
-    <%= submit_tag "Search" %>
+    <%= submit_tag "Search", class: "search-button" %>
   <% end %>
 </div>
 
+<<<<<<< HEAD
   <%# thise are the list of items %>
 <div class="index-map-items">
 
@@ -26,3 +27,26 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+=======
+<%# display results %>
+<% @items.each do |item| %>
+<% end %>
+
+<%# thise are the list of items %>
+<div class="items-cards-array">
+
+  <% @items.each do |item| %>
+    <div class="mt-3 text-decoration-none">
+      <%= render "shared/carditem", item: item %>
+    </div>
+  <%end%>
+</div>
+
+<%# this is a place holder for the maps %>
+<div class="item-card-map-location"   data-controller="map"
+data-map-markers-value="<%= @markers.to_json %>"
+data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+
+</div>
+</div>
+>>>>>>> 1e624d0696f71d5a44045d98b5ee200eb1408604
