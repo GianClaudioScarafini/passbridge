@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-<<<<<<< HEAD
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
 
@@ -16,14 +15,6 @@ class ItemsController < ApplicationController
       @items = Item.where(sql_subquery, search: params[:search])
     else
       @Items = Item.all
-=======
-  def index
-    if params[:search].present?
-      search_term = params[:search].downcase
-      @items = Item.where("lower(name) LIKE ?", "%#{search_term}%")
-    else
-      @items = Item.all
->>>>>>> 1e624d0696f71d5a44045d98b5ee200eb1408604
     end
 
     @user = current_user
