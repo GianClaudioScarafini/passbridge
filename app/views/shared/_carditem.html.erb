@@ -1,6 +1,12 @@
 
 <%= link_to item_path(item), class: "text-decoration-none card-item-text-colot-blk" do %>
-  <div class="card-item-index">
+  <div class="card-item-index"
+  data-controller="mapindex"
+  data-mapindex-markers-value="<%= ([{ lat: item.latitude, lng: item.longitude },
+  { lat: current_user.latitude, lng: current_user.longitude}]).to_json%>"
+  data-mapindex-api-key-value="<%= ENV['MAPBOX_API_KEY']%>"
+
+  >
     <div class="card-item-img">
       <%=cl_image_tag item.images[0].key %>
     </div>
@@ -8,7 +14,7 @@
       <div class="row-one">
         <h5 class="two-lines" ><%= item.name %></h5>
         <div class="card-distance">
-          <p>3km</p>
+          <p data-mapindex-target="distance"></p>
           <i class="fa-solid fa-location-dot"></i>
         </div>
       </div>
