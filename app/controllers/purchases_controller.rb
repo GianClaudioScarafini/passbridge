@@ -47,6 +47,6 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:quantity, :shipping_method_id, :distance, :total_co2_emitions, :price)
+    params.require(:purchase).permit(:quantity, :shipping_method_id, :distance, :total_co2_emitions, :price, :status)
   end
 end
