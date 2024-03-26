@@ -44,19 +44,19 @@
           <% if @user.purchases.empty? %>
             <p style="opacity: 0.7"><em>Your purchased items will be listed here</em></p>
           <% else %>
-            <ul class="list-group">
+            <div class="list-group">
               <% @user.purchases.each do |purchase| %>
-                <li class="list-group-item d-flex justify-content-between">
+                <%= link_to item_path(purchase.item), class:"list-group-item d-flex justify-content-between" do %>
                   <div class="purchase-item-name">
                     <i class="fa-solid fa-cart-shopping me-2"></i>
-                    <%= link_to purchase.item.name, item_path(purchase.item), class:"item-name"%> (x <%= purchase.quantity %>)
+                    <span class="item-name"><%= purchase.item.name %> (x <%= purchase.quantity %>) </span>
                   </div>
                   <div>
                   | <%= purchase.status %>
                   </div>
-                </li>
+                <% end %>
               <% end %>
-            </ul>
+            </div>
           <% end %>
         </div>
       </div>
@@ -69,7 +69,7 @@
           <% if @user.items.empty? %>
             <p style="opacity: 0.7"><em>Your items will be listed here</em></p>
           <% else %>
-            <ul class="list-group">
+            <div class="list-group">
               <% @user.items.each do |item| %>
                 <li class="list-group-item">
                 <div class="item-list-card">
@@ -98,7 +98,7 @@
                 </div>
                 </li>
               <% end %>
-            </ul>
+            </div>
           <% end %>
         </div>
       </div>
