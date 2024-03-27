@@ -52,7 +52,13 @@
                     <span class="item-name"><%= purchase.item.name %> (x <%= purchase.quantity %>) </span>
                   </div>
                   <div>
-                  | <%= purchase.status %>
+                    <% if purchase.status == "pending" %>
+                      <span class="badge bg-warning text-dark">Pending</span>
+                    <% elsif purchase.status == "accepted"%>
+                      <span class="badge bg-success">Accepted</span>
+                    <% else purchase.status == "declined" %>
+                      <span class="badge bg-danger">Declined</span>
+                    <% end %>
                   </div>
                 <% end %>
               <% end %>
@@ -72,18 +78,18 @@
             <div class="list-group">
               <% @user.items.each do |item| %>
                 <li class="list-group-item">
-                <div class="item-list-card">
-                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px", style: "border-radius: 3px" %>
-                  <strong><%= link_to item.name, item_path(item), class:"item-name"%></strong>
-                  <span></span> <em><%= item.remaining_quantity %> remaining</em>
+                <div class="row">
+                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px", style: "border-radius: 3px", class: "col-1" %>
+                  <div class="posted-item-name col-3 align-self-center"><%= link_to item.name, item_path(item), class:"text-decoration-none text-white fw-bold" %></div>
+                  <span class="col-2 align-self-center"><em><%= item.remaining_quantity %> remaining</em></span>
                   <% unless item.purchases.empty? %>
-                    <div class="d-flex align-item-center justify-content-center">
+                    <div class="d-flex align-item-center justify-content-center col-4">
                       <button data-action="click->modal#display" data-item="<%= item.id %>" class="proposals-button">See purchase proposals</button>
                     </div>
                   <% else %>
-                    <div></div>
+                    <div class="col-4"></div>
                   <% end %>
-                  <div class="d-flex gap-2">
+                  <div class="d-flex gap-2 col-2">
                     <% if policy(item).edit? %>
                       <%= link_to edit_item_path(item), class: "edit-button", style: "text-decoration: none" do %>
                         <i class="fa-solid fa-pen-to-square"></i>
