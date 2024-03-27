@@ -23,7 +23,7 @@ export default class extends Controller {
             if (distance < 100000) {
                 this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}km`
             } else {
-                this.distanceTarget.innerText = `> 100 km`
+                this.distanceTarget.innerText = `>100km`
             }
             // this.distanceTarget.innerText = `${(distance/1000).toFixed(1)}km`
         })
