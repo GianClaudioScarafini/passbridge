@@ -4,7 +4,6 @@
   width: 55%;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
   height: auto;
 }
 .item-card-map-location{
@@ -22,4 +21,9 @@
 
 .index-map-items{
   display: flex;
+}
+
+
+.index-card-padding{
+  padding: 0px 8px 8px
 }
