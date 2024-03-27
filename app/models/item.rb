@@ -14,7 +14,7 @@ class Item < ApplicationRecord
   before_save :preserve_images
 
   def remaining_quantity
-    purchases_quantity = self.purchases.sum(:quantity)
+    purchases_quantity = self.purchases.where(status: :accepted).sum(:quantity)
     self.quantity - purchases_quantity
   end
 
