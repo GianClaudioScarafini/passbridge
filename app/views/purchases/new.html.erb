@@ -26,8 +26,8 @@
     <%# by including the simple_form gem in the Gemfile and running bundle install %>
     <%= simple_form_for [ @item, @purchase ] do |f| %>
       <%= f.input :quantity, input_html: { data: {action: "change->co2calculation#calculate", co2calculation_target: "quantity" }} %>
-      <%= f.association :shipping_method, label_method: :method, input_html:{ data: {action: "change->co2calculation#calculate", co2calculation_target: "co2Value" }} %>
-      <%= f.button :submit, class: "main-button" %>
+      <%= f.association :shipping_method, label_method: :method, input_html:{ class: "shipping", data: {action: "change->co2calculation#calculate", co2calculation_target: "co2Value" }} %>
+      <%= f.button :submit, class: "main-button", value: "confirm proposal" %>
       <%= hidden_field_tag :distance, params[:distance] %>
       <%= hidden_field_tag :total_co2_emitions %>
       <%= hidden_field_tag :price %>
