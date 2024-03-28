@@ -1,13 +1,22 @@
 <%# this is the search bar %>
-<div class="search">
-  <%= form_tag(items_path, method: "get", class: "search-form", local: "true") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?" %>
-    <%= submit_tag "Search", class: "search-button" %>
-  <% end %>
-</div>
+
+
+
 
   <%# thise are the list of items %>
 <div class="index-map-items">
+
+  <div class="card-serch">
+    <div class="form-inputs">
+      <div class="d-flex gap-3">
+        <%= form_tag(items_path, method: "get", class: "search-form", local: "true") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "What are you looking for?", class: "form-control string" %>
+          <%= submit_tag "Search", class: "main-button mx-2" %>
+        <% end %>
+      </div>
+  </div>
+
+
 
   <div class="items-cards-array">
     <% @items.each do |item| %>
@@ -15,14 +24,11 @@
         <%= render "shared/carditem", item: item %>
       </div>
     <%end%>
-  </div>
-
-  <%# this is a place holder for the maps %>
-
-  <%# raise  %>
-
-    <div class="item-card-map-location"   data-controller="map" data-map-target="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+</div>
+
+<div class="item-card-map-location"   data-controller="map" data-map-target="map"
+data-map-markers-value="<%= @markers.to_json %>"
+data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+</div>
