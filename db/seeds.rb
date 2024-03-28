@@ -40,6 +40,40 @@ user2.photo.attach(io: file, filename: "user2.png", content_type: "image/png")
 user2.save
 
 
+file = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+user3 = User.new(
+  first_name: "Laura",
+  last_name: "Nicolas",
+  email: "laura@gmail.com",
+  address: "Schönhauser Allee 127",
+  city: "Berlin",
+  state: "Berlin",
+  zip: "10437",
+  nation: "Germany",
+  phone: "01799900555",
+  password: "123456"
+)
+user3.photo.attach(io: file, filename: "user1.png", content_type: "image/png")
+user3.save
+
+
+file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww")
+user4 = User.new(
+
+  first_name: "Gian",
+  last_name: "Scarafini",
+  email: "gian@gmail.com",
+  address: "Am Festungsgraben 2",
+  city: "Berlin",
+  state: "Berlin",
+  zip: "10117",
+  nation: "Germany",
+  phone: "01788811444",
+  password: "123456"
+)
+user4.photo.attach(io: file, filename: "user2.png", content_type: "image/png")
+user4.save
+
 file = URI.open("https://images.unsplash.com/photo-1629608444154-6d052691632f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJyaWNrc3xlbnwwfHwwfHx8MA%3D%3D")
 item1 = Item.new(
   name: "Regular bricks",
@@ -108,7 +142,7 @@ item4 = Item.new(
   price: 5.20,
   condition: "regular",
   quantity: 350,
-  user: user1,
+  user: user4,
   start_date: Date.today,
   end_date: Date.today + 100
 )
@@ -188,7 +222,7 @@ item8 = Item.new(
   price: 36.40,
   condition: "regular",
   quantity: 1,
-  user: user1,
+  user: user4,
   start_date: Date.today + 3,
   end_date: Date.today + 20
 )
@@ -208,7 +242,7 @@ item9 = Item.new(
   price: 435.00,
   condition: "very good",
   quantity: 1,
-  user: user2,
+  user: user4,
   start_date: Date.today,
   end_date: Date.today + 70
 )
@@ -228,7 +262,7 @@ item10 = Item.new(
   price: 0.00,
   condition: "bad",
   quantity: 40,
-  user: user2,
+  user: user4,
   start_date: Date.today,
   end_date: Date.today + 7
 )
