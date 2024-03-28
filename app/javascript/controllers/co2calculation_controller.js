@@ -25,7 +25,9 @@ export default class extends Controller {
       ];
     const itmeQuantity = this.quantityTarget.value;
     const co2Multiplyer = parseInt(this.co2ValueTarget.value)-1;
+    console.log(co2Multiplyer);
     const co2Multiplyertst  = shippingMethodMulipliers[co2Multiplyer][1];
+    console.log(co2Multiplyertst);
     const urlParams = new URLSearchParams(window.location.search);
     const distance = urlParams.get('distance');
     const distanceKm = (distance / 1000).toFixed(2);
