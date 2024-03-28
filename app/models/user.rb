@@ -17,6 +17,10 @@ class User < ApplicationRecord
   private
 
   def update_full_address
-    self.address = "#{self.address}, #{self.city}, #{self.nation}"
+    if self.address.nil?
+      self.address = "Germany Berlin"
+    else
+      self.address = "#{self.address} #{self.city} #{self.nation}"
+    end
   end
 end
