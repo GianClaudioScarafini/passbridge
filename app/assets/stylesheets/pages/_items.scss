@@ -1,7 +1,6 @@
 .items-cards-array{
   padding: 10px;
   display: flex;
-  width: 55%;
   flex-wrap: wrap;
   flex-direction: row;
   height: auto;
@@ -12,6 +11,11 @@
   background: rgba(120, 120, 120, 0.637);
   position: sticky;
   top: 0px;
+}
+
+.card-serch{
+  width: 55%;
+
 }
 
 .card-and-map{
