@@ -54,7 +54,7 @@ export default class extends Controller {
         .then((data) => {
             // display distance
             const distance = data.routes[0].legs[0].distance
-            this.distanceTarget.innerText = `Distance: ${(distance/1000).toFixed(1)} Km.`
+            this.distanceTarget.innerText = `${(distance/1000).toFixed(1)} km`
             //adding distance to link
             const distanceLink = `?distance=${distance}`
             const priceLink = `&price=${price}`
