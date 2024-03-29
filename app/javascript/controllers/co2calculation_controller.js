@@ -4,26 +4,18 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["co2Value", "quantity", "displayCo2Value", "displayPrice", "displayMuliplayer"]
 
+  static values = { shipping: Array }
 
 
 
   connect() {
 
+
   }
   calculate(){
-
-    const shippingMethodMulipliers = [
-      ['', 0], // ["shipping_method", "multiplier"]
-      ['foot', 0],
-      ['bike', 0],
-      ['airplane', 12500],
-      ['car', 200],
-      ['motorcycle', 100],
-      ['electric_motorcycle', 0],
-      ['electric_car', 0],
-      ['truck', 2000],
-      ['drone', 0]
-      ];
+    // get the shipping method multipliers
+    const shippingMethodMulipliers = this.shippingValue;
+    console.log("shippingMethodMulipliers");
 
     // get the quantitiy selected by the user
     const itmeQuantity = this.quantityTarget.value;
@@ -32,7 +24,7 @@ export default class extends Controller {
 
     // get the shipping method selected by the user
     if (this.co2ValueTarget.value == ""){
-      var indexFomUser = this.co2ValueTarget.value = 0;
+      var indexFomUser = 0;
     }else{
       var indexFomUser = parseInt(this.co2ValueTarget.value);
     }
@@ -40,9 +32,10 @@ export default class extends Controller {
     console.log(indexFomUser);
 
     // get the multiplier for the selected shipping method
-    const co2method  = shippingMethodMulipliers[indexFomUser][1];
-    console.log("indexFomUser");
-    console.log(shippingMethodMulipliers[indexFomUser][1]);
+    const index = shippingMethodMulipliers.findIndex(x => x.id === indexFomUser)
+    const co2method = shippingMethodMulipliers[index]["co2_ratio"]
+    console.log("co2method");
+    console.log(co2method);
 
     // get the distance and price from the url
     const urlParams = new URLSearchParams(window.location.search);
