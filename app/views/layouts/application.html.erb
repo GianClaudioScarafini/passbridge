@@ -22,11 +22,14 @@
   <%# add if statement to check if the current path is not the root path, then render the navbar not make it visible on the main page %>
   <% if request.path != "/" %>
     <%= render "shared/navbar"%>
+
   <%end%>
     <%= render "shared/flashes" %>
 
     <%= yield %>
+    <% if request.path != "/" %>
     <%= render 'shared/footer' %>
+  <%end%>
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.2.0/mapbox-gl-directions.js"></script>
   </body>
 </html>
