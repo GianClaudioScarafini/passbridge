@@ -1,4 +1,4 @@
-.items-cards-array{
+.items-cards-array {
   padding: 10px;
   display: flex;
   width: 55%;
@@ -6,24 +6,24 @@
   flex-direction: row;
   height: auto;
 }
-.item-card-map-location{
+
+.item-card-map-location {
   height: 100vh;
-  width: 45%;
+  margin: 20px;
+  width: 49%;
   background: rgba(120, 120, 120, 0.637);
   position: sticky;
   top: 0px;
 }
 
-.card-and-map{
+.card-and-map {
   display: flex;
 }
 
-
-.index-map-items{
+.index-map-items {
   display: flex;
 }
 
-
-.index-card-padding{
-  padding: 0px 8px 8px
+.index-card-padding {
+  padding: 0px 8px 8px;
 }
