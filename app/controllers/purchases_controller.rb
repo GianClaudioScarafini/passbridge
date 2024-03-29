@@ -23,6 +23,7 @@ class PurchasesController < ApplicationController
   def new
     @purchase = Purchase.new
     @item = Item.find(params[:item_id])
+    @shipping_methods = ShippingMethod.select(:id, :method, :co2_ratio).to_json
     authorize @purchase
   end
 
