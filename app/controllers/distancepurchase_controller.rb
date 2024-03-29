@@ -1,0 +1,2 @@
+class DistancepurchaseController < ApplicationController
+end

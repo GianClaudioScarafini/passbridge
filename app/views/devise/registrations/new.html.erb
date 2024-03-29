@@ -1,5 +1,5 @@
 <div class="container mt-5" style="color: white">
-  <h2>Sign up</h2>
+  <h2>Join our community</h2>
   <hr>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -24,45 +24,6 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-      <div class="d-flex gap-3">
-        <div class="flex-grow-1">
-          <%= f.input :address,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "address" }%>
-        </div>
-        <div>
-          <%= f.input :city,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "city" }%>
-        </div>
-      </div>
-      <div class="d-flex gap-3">
-        <div class="flex-fill">
-          <%= f.input :state,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "state" }%>
-        </div>
-        <div class="flex-fill">
-          <%= f.input :zip,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "zip" }%>
-        </div>
-      </div>
-      <div class="d-flex gap-3">
-        <div class="flex-fill">
-          <%= f.input :phone,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "phone" }%>
-        </div>
-        <div class="flex-fill">
-          <%= f.input :photo, as: :file %>
-        </div>
-      </div>
       <div class="d-flex gap-3">
         <div class="flex-fill">
           <%= f.input :password,

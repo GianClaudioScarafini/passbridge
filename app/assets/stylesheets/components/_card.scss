@@ -1,11 +1,11 @@
 .card-item-index{
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
   height: 340px;
   width: 250px;
   border-radius: 10px;
   text-decoration: none;
-
 }
+
 .card-item-index:hover{
   box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.537);
   transition: 0.3s;
@@ -14,12 +14,26 @@
   cursor: pointer;
 }
 
+.card-distance{
+  display: flex;
+  font-size: smaller;
+}
+
+.card-distance i {
+  margin-right: 5px;
+  margin-top: 4px;
+  position: relative;
+  left: 6px;
+}
+
 .row-one{
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  height: 55px;
 }
+
 .row-two{
   text-decoration: none;
   font-size: 12px;
@@ -42,6 +56,13 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.card-item-img img{
+  text-decoration: none;
+  height: 170px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
 .card-item-content{
   padding: 10px 30px 10px;
@@ -51,4 +72,19 @@
 .card-item-text-colot-blk{
   color: black;
   text-decoration: none;
+}
+
+
+.two-lines {
+  margin-right: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+
+.card-sub{
+  font-size: 10px;
 }

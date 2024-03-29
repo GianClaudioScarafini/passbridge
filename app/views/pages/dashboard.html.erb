@@ -1,0 +1,113 @@
+<div class="container mt-5" style="color: white" data-controller="modal">
+  <!-- The Modal -->
+  <div id="myModal" class="purchase-modal" data-modal-target="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" data-action="click->modal#close">&times;</span>
+      <div data-modal-target="modalContent"></div>
+    </div>
+
+  </div>
+
+  <div class="row" style="height: 75vh">
+    <div class="col-md-4">
+      <div class="row" style="padding: 5px; height: 20vh">
+        <div class="col-md-12 user-dashcard">
+          <div class="row ps-2 pt-3">
+            <div class="col-md-2">
+              <% unless @user.photo.key.blank? %>
+                <%= cl_image_tag @user.photo.key, class: "avatar-large", style: "border: 3px solid rgba(0,0,0,0.3)" %>
+              <% else %>
+                <%= image_tag "profile_placeholder.png", class: "avatar-large", style: "border: 3px solid rgba(0,0,0,0.3)" %>
+              <% end %>
+            </div>
+            <div class="col-md-10">
+              <h5><%= @user.first_name %> <%= @user.last_name %></h5>
+              <p style="opacity: 0.66"><%= @user.email %></p>
+            </div>
+          </div>
+          <div class="row ps-2">
+            <div class="col-md-8">
+              <p style="opacity: 0.88"><%= @user.city %> <span style="opacity: 0.33">•</span> <%= @user.nation %></p>
+            </div>
+            <div class="col-md-4">
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-sm btn-outline-info" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="padding: 5px; height: 55vh">
+        <div class="col-md-12 dashcard">
+          <h5>My Purchases</h5>
+          <hr>
+          <% if @user.purchases.empty? %>
+            <p style="opacity: 0.7"><em>Your purchased items will be listed here</em></p>
+          <% else %>
+            <div class="list-group">
+              <% @user.purchases.each do |purchase| %>
+                <%= link_to item_path(purchase.item), class:"list-group-item d-flex justify-content-between" do %>
+                  <div class="purchase-item-name">
+                    <i class="fa-solid fa-cart-shopping me-2"></i>
+                    <span class="item-name"><%= purchase.item.name %> (x <%= purchase.quantity %>) </span>
+                  </div>
+                  <div>
+                    <% if purchase.status == "pending" %>
+                      <span class="badge bg-warning text-dark">Pending</span>
+                    <% elsif purchase.status == "accepted"%>
+                      <span class="badge bg-success">Accepted</span>
+                    <% else purchase.status == "declined" %>
+                      <span class="badge bg-danger">Declined</span>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row" style="padding: 5px; height: 75vh">
+        <div class="col-md-12 dashcard">
+          <h5>Give a second life to your materials and reduce your carbon footprint. <%= link_to "Post your items!", new_item_path, class: "link-success" %></h5>
+          <hr>
+          <% if @user.items.empty? %>
+            <p style="opacity: 0.7"><em>Your items will be listed here</em></p>
+          <% else %>
+            <div class="list-group">
+              <% @user.items.each do |item| %>
+                <li class="list-group-item">
+                <div class="row">
+                  <%= cl_image_tag item.images.first.key, width: "40px", height: "40px", style: "border-radius: 3px", class: "col-1" %>
+                  <div class="posted-item-name col-3 align-self-center"><%= link_to item.name, item_path(item), class:"text-decoration-none text-white fw-bold" %></div>
+                  <span class="col-2 align-self-center"><em><%= item.remaining_quantity %> remaining</em></span>
+                  <% unless item.purchases.empty? %>
+                    <div class="d-flex align-item-center justify-content-center col-4">
+                      <button data-action="click->modal#display" data-item="<%= item.id %>" class="proposals-button">See purchase proposals</button>
+                    </div>
+                  <% else %>
+                    <div class="col-4"></div>
+                  <% end %>
+                  <div class="d-flex gap-2 col-2">
+                    <% if policy(item).edit? %>
+                      <%= link_to edit_item_path(item), class: "edit-button", style: "text-decoration: none" do %>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      <% end %>
+                    <% end %>
+                    <% if policy(item).destroy? %>
+                      <%= link_to item_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-button", style: "text-decoration: none" do %>
+                        <i class="fa-solid fa-trash"></i>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
+                </li>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

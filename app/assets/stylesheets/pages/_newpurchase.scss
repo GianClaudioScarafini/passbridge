@@ -1,0 +1,29 @@
+.purchase-card{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: transparent;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  text-align: center;
+}
+
+.flex-new-purchase{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+
+.purchase-center{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.shipping {
+  border-radius: 10px;
+}

@@ -1,10 +1,8 @@
 .items-cards-array{
   padding: 10px;
   display: flex;
-  width: 55%;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
   height: auto;
 }
 .item-card-map-location{
@@ -15,6 +13,21 @@
   top: 0px;
 }
 
+.card-serch{
+  width: 55%;
+
+}
+
 .card-and-map{
   display: flex;
+}
+
+
+.index-map-items{
+  display: flex;
+}
+
+
+.index-card-padding{
+  padding: 0px 8px 8px
 }

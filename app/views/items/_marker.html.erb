@@ -1,0 +1,10 @@
+<%if item.latitude == current_user.latitude  %>
+  <% if current_user.photo.key.nil? %>
+    <%= image_tag "profile_placeholder.png", class: "user-logo-map" %>
+  <%else %>
+    <%= cl_image_tag current_user.photo.key, class: "user-logo-map" %>
+  <%end %>
+<%else  %>
+  <%= cl_image_tag item.images[0].key, alt: "Logo", class: "item-logo-map" %>
+<%end%>
+<%# test %>

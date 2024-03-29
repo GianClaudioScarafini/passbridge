@@ -1,0 +1,36 @@
+<div class="new-item-form purchase-center" data-controller="co2calculation" data-co2calculation-shipping-value="<%= @shipping_methods %>">
+  <div class="">
+    <h2>Purchase your items</h2>
+    <% sentences = [
+      "...and give a second life to your Construction material",
+      "...and promote circular economy in your community",
+      "...and reduce your carbon footprint"
+    ] %>
+    <h5><%= sentences.sample %></h5>
+    <div class="purchase-card">
+      <h5>total cost</h5>
+      <div class="flex-new-purchase">
+        <p data-co2calculation-target="displayPrice">..,..</p>
+        <p>€</p>
+      </div>
+      <h5>Co2/method</h5>
+      <div class="flex-new-purchase">
+        <p data-co2calculation-target="displayCo2Value">...,..</p>
+        <p>g C02/km</p>
+      </div>
+    </div>
+
+
+    <hr>
+    <%# Add the missing import for the simple_form_for helper method %>
+    <%# by including the simple_form gem in the Gemfile and running bundle install %>
+    <%= simple_form_for [ @item, @purchase ] do |f| %>
+      <%= f.input :quantity, input_html: { data: {action: "change->co2calculation#calculate", co2calculation_target: "quantity" }} %>
+      <%= f.association :shipping_method, label_method: :method, input_html:{ class: "shipping", data: {action: "change->co2calculation#calculate", co2calculation_target: "co2Value" }} %>
+      <%= f.button :submit, class: "main-button", value: "confirm proposal" %>
+      <%= hidden_field_tag :distance, params[:distance] %>
+      <%= hidden_field_tag :total_co2_emitions %>
+      <%= hidden_field_tag :price %>
+    <% end %>
+  </div>
+</div>
