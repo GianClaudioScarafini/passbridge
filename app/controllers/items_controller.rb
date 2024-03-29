@@ -78,7 +78,7 @@ class ItemsController < ApplicationController
   def destroy
     authorize @item
     @item.destroy
-    redirect_to items_path, status: :see_other
+    redirect_to dashboard_path, status: :see_other
   end
 
   def edit

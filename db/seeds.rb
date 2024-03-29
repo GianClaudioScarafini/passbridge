@@ -40,15 +40,15 @@ user2.photo.attach(io: file, filename: "user2.png", content_type: "image/png")
 user2.save
 
 
-file = URI.open("https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+file = URI.open("https://media.licdn.com/dms/image/C4D03AQHdKBDD8yhuzA/profile-displayphoto-shrink_400_400/0/1550638693361?e=1717027200&v=beta&t=nGDpEmQrmVFH9-i8Ix29vaVaYZhY5uvAdvn6wf3bEok")
 user3 = User.new(
-  first_name: "Laura",
+  first_name: "Laura Cecilia",
   last_name: "Nicolas",
   email: "laura@gmail.com",
-  address: "Schönhauser Allee 127",
-  city: "Berlin",
-  state: "Berlin",
-  zip: "10437",
+  address: "Arno-Nitzsche-Straße 29",
+  city: "Leipzig",
+  state: "Sachsen",
+  zip: "04277",
   nation: "Germany",
   phone: "01799900555",
   password: "123456"
@@ -57,7 +57,7 @@ user3.photo.attach(io: file, filename: "user1.png", content_type: "image/png")
 user3.save
 
 
-file = URI.open("https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww")
+file = URI.open("https://avatars.githubusercontent.com/u/77918123?v=4")
 user4 = User.new(
 
   first_name: "Gian",
@@ -182,7 +182,7 @@ item6 = Item.new(
   price: 290.00,
   condition: "like new",
   quantity: 2,
-  user: user1,
+  user: user3,
   start_date: Date.today,
   end_date: Date.today + 25
 )
@@ -202,7 +202,7 @@ item7 = Item.new(
   price: 88.00,
   condition: "very good",
   quantity: 2,
-  user: user1,
+  user: user3,
   start_date: Date.today + 2,
   end_date: Date.today + 45
 )
@@ -337,12 +337,12 @@ item13.save
 file = URI.open("https://images.unsplash.com/photo-1623111771732-6eadcf47b60b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmF0aHR1YiUyMGFudGlrfGVufDB8fDB8fHww")
 item14 = Item.new(
   name: "Antique bath tub",
-  location: "Schwesterstraße 64, 42285 Wuppertal, Germany",
+  location: "Hedwigstraße 20, 04315 Leipzig, Germany",
   description: "Greenish antique bath thub ready to use.",
   price: 150.00,
   condition: "good",
   quantity: 1,
-  user: user2,
+  user: user3,
   start_date: Date.today,
   end_date: Date.today + 300
 )
