@@ -7,13 +7,21 @@
   height: auto;
 }
 
-.item-card-map-location {
+.map-container {
   height: 100vh;
   margin: 20px;
-  width: 49%;
-  background: rgba(120, 120, 120, 0.637);
+  width: 100%;
   position: sticky;
   top: 0px;
+}
+
+.item-card-map-location {
+  width: 100%;
+  height: 100%;
+}
+
+.card-search{
+  width: 100%;
 }
 
 .card-and-map {
