@@ -1,6 +1,6 @@
 <%if item.latitude == current_user.latitude  %>
   <%# raise  %>
-  <%#= cl_image_tag current_user.photo.key, class: "user-logo-map" %>
+  <%= cl_image_tag current_user.photo.key, class: "user-logo-map" %>
 <%else  %>
-  <%#= cl_image_tag item.images[0].key, alt: "Logo", class: "item-logo-map" %>
+  <%= cl_image_tag item.images[0].key, alt: "Logo", class: "item-logo-map" %>
 <%end%>
