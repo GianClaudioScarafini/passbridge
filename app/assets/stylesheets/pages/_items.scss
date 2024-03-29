@@ -1,7 +1,6 @@
 .items-cards-array {
   padding: 10px;
   display: flex;
-  width: 55%;
   flex-wrap: wrap;
   flex-direction: row;
   height: auto;
@@ -9,8 +8,7 @@
 
 .map-container {
   height: 100vh;
-  margin: 20px;
-  width: 100%;
+  width: 65%;
   position: sticky;
   top: 0px;
 }
@@ -33,5 +31,5 @@
 }
 
 .index-card-padding {
-  padding: 0px 8px 8px;
+  padding: 0px 10px 10px;
 }
